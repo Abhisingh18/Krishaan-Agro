@@ -1,13 +1,20 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDown, Leaf, Menu, Phone, ShoppingBag, X } from "lucide-react";
+import {
+  ChevronDown,
+  Menu,
+  MessageCircle,
+  Phone,
+  ShoppingBag,
+  X,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { categories } from "@/lib/data";
 import { useCart } from "./cart/CartProvider";
-import { cn } from "@/lib/utils";
+import { cn, whatsappLink } from "@/lib/utils";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -20,6 +27,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [activeCat, setActiveCat] = useState(0);
   const { count, open } = useCart();
 
   useEffect(() => {
@@ -94,39 +102,143 @@ export default function Navbar() {
               <AnimatePresence>
                 {servicesOpen && (
                   <motion.div
-                    initial={{ opacity: 0, y: 12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 12 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute left-1/2 top-full w-[620px] -translate-x-1/2 pt-3"
+                    initial={{ opacity: 0, y: 16, scale: 0.97 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 16, scale: 0.97 }}
+                    transition={{ type: "spring", damping: 26, stiffness: 320 }}
+                    className="absolute left-1/2 top-full w-[760px] -translate-x-1/2 pt-3"
                   >
-                    <div className="grid grid-cols-2 gap-2 rounded-3xl border border-brand-100 bg-white p-3 shadow-glow">
-                      {categories.map((c) => (
-                        <Link
-                          key={c.slug}
-                          href={`/services/${c.slug}`}
-                          className="group flex gap-3 rounded-2xl p-3 transition hover:bg-brand-50"
+                    <div className="overflow-hidden rounded-[1.75rem] border border-brand-100 bg-white shadow-glow">
+                      <div className="grid grid-cols-[1.1fr_1fr]">
+                        {/* Left: category list */}
+                        <div className="space-y-1 p-3">
+                          {categories.map((c, idx) => (
+                            <Link
+                              key={c.slug}
+                              href={`/services/${c.slug}`}
+                              onMouseEnter={() => setActiveCat(idx)}
+                              className={cn(
+                                "group/item flex items-center gap-3 rounded-2xl p-3 transition-all duration-300",
+                                activeCat === idx
+                                  ? "bg-gradient-to-r from-brand-50 to-accent-50/60 shadow-soft"
+                                  : "hover:bg-brand-50/60"
+                              )}
+                            >
+                              <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-xl bg-brand-900">
+                                <Image
+                                  src={c.image}
+                                  alt={c.title}
+                                  fill
+                                  sizes="48px"
+                                  className="object-cover"
+                                />
+                              </span>
+                              <span className="min-w-0 flex-1">
+                                <span className="flex items-center gap-2">
+                                  <span className="truncate text-sm font-bold text-brand-900">
+                                    {c.title}
+                                  </span>
+                                  <span
+                                    className={cn(
+                                      "shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold text-white",
+                                      c.accent === "accent"
+                                        ? "bg-accent-500"
+                                        : "bg-brand-600"
+                                    )}
+                                  >
+                                    {c.items.length}
+                                  </span>
+                                </span>
+                                <span className="block truncate text-xs text-brand-500">
+                                  {c.tagline}
+                                </span>
+                              </span>
+                              <ChevronDown
+                                className={cn(
+                                  "h-4 w-4 shrink-0 -rotate-90 text-brand-300 transition-all",
+                                  activeCat === idx &&
+                                    "translate-x-0.5 text-accent-500"
+                                )}
+                              />
+                            </Link>
+                          ))}
+                        </div>
+
+                        {/* Right: live preview */}
+                        <div className="relative m-3 ml-0 overflow-hidden rounded-2xl bg-brand-950">
+                          <AnimatePresence mode="wait">
+                            <motion.div
+                              key={activeCat}
+                              initial={{ opacity: 0, scale: 1.06 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              exit={{ opacity: 0 }}
+                              transition={{ duration: 0.35 }}
+                              className="absolute inset-0"
+                            >
+                              <Image
+                                src={categories[activeCat].image}
+                                alt={categories[activeCat].title}
+                                fill
+                                sizes="340px"
+                                className="object-cover"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-transparent" />
+                            </motion.div>
+                          </AnimatePresence>
+                          <div className="relative flex h-full min-h-[260px] flex-col justify-end p-5 text-white [text-shadow:_0_1px_8px_rgba(0,0,0,0.8)]">
+                            <motion.div
+                              key={`txt-${activeCat}`}
+                              initial={{ opacity: 0, y: 12 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.3, delay: 0.1 }}
+                            >
+                              <p className="font-display text-lg font-bold">
+                                {categories[activeCat].title}
+                              </p>
+                              <p className="mt-1 line-clamp-2 text-xs text-white/90">
+                                {categories[activeCat].description}
+                              </p>
+                              <div className="mt-3 flex flex-wrap gap-1.5">
+                                {categories[activeCat].items
+                                  .slice(0, 3)
+                                  .map((it) => (
+                                    <span
+                                      key={it.name}
+                                      className="rounded-full bg-white/15 px-2.5 py-1 text-[10px] font-semibold backdrop-blur-sm"
+                                    >
+                                      {it.name}
+                                    </span>
+                                  ))}
+                                {categories[activeCat].items.length > 3 && (
+                                  <span className="rounded-full bg-accent-500 px-2.5 py-1 text-[10px] font-bold">
+                                    +{categories[activeCat].items.length - 3} more
+                                  </span>
+                                )}
+                              </div>
+                            </motion.div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Bottom CTA strip */}
+                      <div className="flex items-center justify-between gap-3 border-t border-brand-100 bg-gradient-to-r from-brand-50 to-accent-50/50 px-5 py-3">
+                        <p className="text-xs font-medium text-brand-700">
+                          🌱 Not sure which service fits you?{" "}
+                          <span className="font-bold">
+                            Get a free consultation
+                          </span>
+                        </p>
+                        <a
+                          href={whatsappLink(
+                            "Hi Krishaan Agro! I'd like a free consultation about your services."
+                          )}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="btn-accent shrink-0 px-4 py-2 text-xs"
                         >
-                          <span
-                            className={cn(
-                              "mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-xl text-white",
-                              c.accent === "accent"
-                                ? "bg-accent-500"
-                                : "bg-brand-600"
-                            )}
-                          >
-                            <Leaf className="h-4 w-4" />
-                          </span>
-                          <span>
-                            <span className="block text-sm font-semibold text-brand-900 group-hover:text-brand-700">
-                              {c.title}
-                            </span>
-                            <span className="block text-xs text-brand-500">
-                              {c.tagline}
-                            </span>
-                          </span>
-                        </Link>
-                      ))}
+                          <MessageCircle className="h-3.5 w-3.5" /> WhatsApp Us
+                        </a>
+                      </div>
                     </div>
                   </motion.div>
                 )}
