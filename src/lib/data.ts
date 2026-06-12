@@ -3,6 +3,15 @@
  * (Later this can be swapped for a Prisma/DB-backed source — shapes are kept clean.)
  */
 
+export type ServiceItem = {
+  name: string;
+  desc: string;
+  image: string;
+  /** Shown in a hover/tap overlay on the service card */
+  highlights?: string[];
+  usp?: string[];
+};
+
 export type Category = {
   slug: string;
   title: string;
@@ -10,7 +19,7 @@ export type Category = {
   description: string;
   image: string;
   accent: "brand" | "accent";
-  items: { name: string; desc: string; image: string }[];
+  items: ServiceItem[];
   /** Real project photos shown as a marquee gallery on the service page */
   gallery?: string[];
   galleryNote?: string;
@@ -35,6 +44,13 @@ export type Product = {
 const img = (id: string, w = 900) =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
 
+/** "B2C Service" -> "b2c-service" (used for sub-service detail page URLs) */
+export const itemSlug = (name: string) =>
+  name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
 /* ----------------------------- SERVICE CATEGORIES ----------------------------- */
 
 export const categories: Category[] = [
@@ -51,11 +67,69 @@ export const categories: Category[] = [
         name: "B2C Service",
         desc: "Fresh, traceable produce and inputs delivered directly to consumers.",
         image: img("photo-1610348725531-843dff563e2c"),
+        highlights: [
+          "AI-Powered Crop Advisory",
+          "Smart Farming Solutions",
+          "Precision Agriculture Services",
+          "Drone Survey & Spraying",
+          "Satellite Crop Monitoring",
+          "AI Crop Disease Detection",
+          "Soil & Water Testing",
+          "Smart Irrigation Management",
+          "Certified Seeds & Bio-Inputs",
+          "Farm Mechanization Support",
+          "Crop Insurance & Subsidy Assistance",
+          "Direct Market Linkage",
+          "Contract Farming Opportunities",
+          "Value Addition & Food Processing",
+          "Farmer Training & Skill Development",
+        ],
+        usp: [
+          "AI Crop Doctor",
+          "AI Farm Planner",
+          "AI Yield Prediction System",
+          "AI Pest Early Warning Alerts",
+          "Digital Farm Dashboard",
+          "Voice-Based Farmer Assistant",
+          "GIS & Farm Mapping Services",
+          "Carbon Farming Advisory",
+          "Export Facilitation Support",
+          "Farm-to-Market Integrated Ecosystem",
+        ],
       },
       {
         name: "B2B Trade",
         desc: "Bulk sourcing & supply between farms, mandis, retailers and exporters.",
         image: img("photo-1586201375761-83865001e31c"),
+        highlights: [
+          "Agribusiness Consulting & Strategy",
+          "Agri Startup Incubation Support",
+          "AI-Powered Agritech Solutions",
+          "Precision Agriculture & Smart Farming",
+          "Enterprise Drone & GIS Services",
+          "Agricultural Research & Data Analytics",
+          "Laboratory & Quality Testing Services",
+          "FPO & Cooperative Development",
+          "Food Processing & Value Chain Solutions",
+          "Agri Supply Chain Management",
+          "Contract Farming Solutions",
+          "Export & Global Market Access",
+          "Sustainability & ESG Advisory",
+          "Carbon Credit & Climate Smart Agriculture",
+          "Investment & Fundraising Support",
+        ],
+        usp: [
+          "AI-Powered Farm Intelligence Platform",
+          "Enterprise Agriculture ERP Solutions",
+          "Custom Agritech Software Development",
+          "Large-Scale Crop Intelligence & Monitoring",
+          "Commodity & Market Forecasting",
+          "Digital Transformation for FPOs & Agribusinesses",
+          "Carbon Credit Project Development",
+          "End-to-End Traceability Solutions",
+          "Farm-to-Factory Integration",
+          "Data-Driven Agribusiness Decision Support",
+        ],
       },
       {
         name: "Agri Machinery",

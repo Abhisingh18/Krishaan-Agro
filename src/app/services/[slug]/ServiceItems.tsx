@@ -1,15 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Check, MessageCircle } from "lucide-react";
+import { ArrowRight, Camera, Check, MessageCircle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import type { Category } from "@/lib/data";
+import { itemSlug } from "@/lib/data";
 import { whatsappLink, cn } from "@/lib/utils";
 import GalleryMarquee from "@/components/home/GalleryMarquee";
-import { Camera } from "lucide-react";
 
 export default function ServiceItems({ category }: { category: Category }) {
+  const router = useRouter();
+
   return (
     <div className="container-x py-16">
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -20,7 +23,10 @@ export default function ServiceItems({ category }: { category: Category }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: (i % 3) * 0.1 }}
-            className="group flex flex-col overflow-hidden rounded-3xl border border-brand-100 bg-white shadow-card card-hover"
+            onClick={() =>
+              router.push(`/services/${category.slug}/${itemSlug(item.name)}`)
+            }
+            className="group flex cursor-pointer flex-col overflow-hidden rounded-3xl border border-brand-100 bg-white shadow-card card-hover"
           >
             <div className="relative aspect-[16/10] overflow-hidden">
               <Image
@@ -41,22 +47,29 @@ export default function ServiceItems({ category }: { category: Category }) {
               </span>
             </div>
             <div className="flex flex-1 flex-col p-5">
-              <h3 className="font-display text-lg font-bold text-brand-900">
+              <h3 className="font-display text-lg font-bold text-brand-900 transition group-hover:text-brand-600">
                 {item.name}
               </h3>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-brand-600/80">
                 {item.desc}
               </p>
-              <a
-                href={whatsappLink(
-                  `Hi Krishaan Agro! I'm interested in "${item.name}" under ${category.title}. Please share details.`
-                )}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-600 transition group-hover:gap-2 hover:text-accent-600"
-              >
-                Enquire now <ArrowRight className="h-4 w-4" />
-              </a>
+              <div className="mt-4 flex items-center justify-between">
+                <span className="inline-flex items-center gap-1 text-sm font-bold text-brand-700 transition-all group-hover:gap-2 group-hover:text-accent-600">
+                  View Details <ArrowRight className="h-4 w-4" />
+                </span>
+                <a
+                  href={whatsappLink(
+                    `Hi Krishaan Agro! I'm interested in "${item.name}" under ${category.title}. Please share details.`
+                  )}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  aria-label={`Enquire about ${item.name} on WhatsApp`}
+                  className="grid h-9 w-9 place-items-center rounded-full bg-brand-50 text-brand-600 transition hover:bg-[#25D366] hover:text-white"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                </a>
+              </div>
             </div>
           </motion.div>
         ))}
