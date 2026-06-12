@@ -11,6 +11,9 @@ export type Category = {
   image: string;
   accent: "brand" | "accent";
   items: { name: string; desc: string; image: string }[];
+  /** Real project photos shown as a marquee gallery on the service page */
+  gallery?: string[];
+  galleryNote?: string;
 };
 
 export type Product = {
@@ -133,35 +136,41 @@ export const categories: Category[] = [
     tagline: "Technology-driven cultivation",
     description:
       "Grow more with less. Protected and soil-less cultivation systems engineered for high yield, water efficiency and year-round production.",
-    image: img("photo-1530507629858-e4977d30e9e0"),
+    image: "/smart-farming/sf1.jpg",
     accent: "accent",
     items: [
       {
         name: "Polyhouse Development / Setup",
-        desc: "Climate-controlled polyhouse design & turnkey installation.",
-        image: img("photo-1416879595882-3373a0480b5b"),
+        desc: "Climate-controlled polyhouse design aur turnkey installation — structure se cultivation tak, sab hamari team karti hai.",
+        image: "/smart-farming/sf14.jpg",
       },
       {
         name: "Hydroponic Farm Setup",
-        desc: "Complete soil-less farm systems, installed and commissioned.",
-        image: img("photo-1581092160562-40aa08e78837"),
+        desc: "Complete soil-less farm systems — NFT channels, grow towers, nutrient dosing — installed, commissioned aur training ke saath.",
+        image: "/smart-farming/sf18.jpg",
       },
       {
         name: "Hydroponic Farming",
-        desc: "Managed hydroponic production with expert monitoring.",
-        image: img("photo-1620421680010-0766ff230392"),
+        desc: "Hamare operational hydroponic farms mein year-round premium leafy greens — 90% kam paani, zero soil, double speed growth.",
+        image: "/smart-farming/sf25.jpg",
       },
       {
         name: "Multilayer Farming",
-        desc: "Stack multiple crops on the same land for higher returns.",
-        image: img("photo-1592982537447-7440770cbfc9"),
+        desc: "Multi-tier A-frame racks se ek hi jagah par kai guna production — chhoti zameen, badi kamai.",
+        image: "/smart-farming/sf22.jpg",
       },
       {
         name: "Vertical Farming",
-        desc: "High-density vertical systems for maximum output per sq.ft.",
-        image: img("photo-1556910103-1c02745aae4d"),
+        desc: "Vertically trained high-density crops aur tower systems se har sq.ft. ka maximum istemal.",
+        image: "/smart-farming/sf10.jpg",
       },
     ],
+    gallery: Array.from(
+      { length: 28 },
+      (_, i) => `/smart-farming/sf${i + 1}.jpg`
+    ),
+    galleryNote:
+      "Sirf baatein nahi — kaam bola karta hai. Ye photos hamare asli operational projects ki hain: polyhouse cultivation, hydroponic grow towers, NFT systems, multilayer A-frame racks aur protected field farming. Har project hamari team ne design, setup aur manage kiya hai — aapka project bhi aisa hi dikh sakta hai.",
   },
   {
     slug: "contract-farming",
@@ -169,50 +178,56 @@ export const categories: Category[] = [
     tagline: "Assured cultivation, assured buy-back",
     description:
       "Grow high-value medicinal and floriculture crops with full input support, technical guidance and a guaranteed market for your harvest.",
-    image: img("photo-1574323347407-f5e1ad6d020b"),
+    image: "/contract-farming/cf9.jpg",
     accent: "accent",
     items: [
       {
-        name: "Aloevera Farming",
-        desc: "High-demand aloe cultivation with assured buy-back.",
-        image: img("photo-1596547609652-9cf5d8d76921"),
+        name: "Gladiolus Farming",
+        desc: "Premium gladiolus cut-flowers — shaadi, events aur decoration market mein zabardast demand. Hamare khet iska saboot hain.",
+        image: "/contract-farming/cf6.jpg",
       },
       {
-        name: "Rose Farming",
-        desc: "Premium rose cultivation for floriculture markets.",
-        image: img("photo-1496062031456-07b8f162a322"),
+        name: "Marigold (Genda) Farming",
+        desc: "Festival aur mandir market ki year-round demand — fast-cycle genda crop, assured kharidari ke saath.",
+        image: "/contract-farming/cf12.jpg",
       },
       {
-        name: "Marigold Farming",
-        desc: "Fast-cycle marigold for festival & extract demand.",
-        image: img("photo-1597848212624-a19eb35e2651"),
+        name: "Tuberose (Rajnigandha) Farming",
+        desc: "Khushboodar rajnigandha — cut-flower aur perfume industry ke liye high-value crop.",
+        image: "/contract-farming/cf10.jpg",
       },
       {
-        name: "Tuberose Farming",
-        desc: "Fragrant tuberose for cut-flower and perfume industry.",
-        image: img("photo-1468327768560-75b778cbb551"),
+        name: "Chrysanthemum (Guldaudi) Farming",
+        desc: "Winter season ka star flower — dense production, strong wholesale market.",
+        image: "/contract-farming/cf8.jpg",
       },
       {
-        name: "Tulsi Farming",
-        desc: "Medicinal holy basil with steady herbal-market demand.",
-        image: img("photo-1615485290382-441e4d049cb5"),
+        name: "Mixed Floriculture Beds",
+        desc: "Ek hi khet mein multiple flower crops ki scientific planning — risk kam, income zyada.",
+        image: "/contract-farming/cf5.jpg",
       },
       {
-        name: "Ashwagandha Farming",
-        desc: "High-value ayurvedic root crop with export potential.",
-        image: img("photo-1597362925123-77861d3fbac7"),
+        name: "Medicinal & Herbal Crops",
+        desc: "Herbal crops ki cultivation hamari technical team ki nigrani mein — quality jo market maange.",
+        image: "/contract-farming/cf3.jpg",
       },
       {
-        name: "Lemongrass Farming",
-        desc: "Aromatic lemongrass for oil extraction & wellness.",
-        image: img("photo-1565011523534-747a8601f10a"),
+        name: "On-Field Supervision",
+        desc: "Hamari team regular field visits karti hai — buaai se harvest tak har stage pe expert saath.",
+        image: "/contract-farming/cf13.jpg",
       },
       {
-        name: "Moringa Farming",
-        desc: "Superfood moringa with booming global nutrition demand.",
-        image: img("photo-1615486511484-92e172cc4fe0"),
+        name: "Assured Buy-Back & Procurement",
+        desc: "Harvest ki weighing, grading aur on-the-spot procurement — poore record ke saath, seedha khet se.",
+        image: "/contract-farming/cf1.jpg",
       },
     ],
+    gallery: Array.from(
+      { length: 16 },
+      (_, i) => `/contract-farming/cf${i + 1}.jpg`
+    ),
+    galleryNote:
+      "Ye photos hamare asli contract farming operations ki hain — Bihar ke kheton mein harvest procurement, weighing aur record-keeping se lekar gladiolus jaise floriculture crops ki cultivation tak. Assured buy-back sirf vaada nahi, hamara roz ka kaam hai — aur ye tasveerein iska saboot hain.",
   },
 ];
 
@@ -458,10 +473,9 @@ export const team: {
     image: "/team-pawan.jpg",
   },
   {
-    // TODO: real photo — save as public/team-deepak.jpg and update path
     name: "Deepak Kumar",
     role: "COO",
-    image: img("photo-1472099645785-5658abf4ff4e"),
+    image: "/team-deepak.jpg",
   },
 ];
 

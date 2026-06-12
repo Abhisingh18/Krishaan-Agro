@@ -6,6 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Category } from "@/lib/data";
 import { whatsappLink, cn } from "@/lib/utils";
+import GalleryMarquee from "@/components/home/GalleryMarquee";
+import { Camera } from "lucide-react";
 
 export default function ServiceItems({ category }: { category: Category }) {
   return (
@@ -59,6 +61,27 @@ export default function ServiceItems({ category }: { category: Category }) {
           </motion.div>
         ))}
       </div>
+
+      {/* Real project gallery */}
+      {category.gallery && category.gallery.length > 0 && (
+        <div className="mt-20">
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-700">
+              <Camera className="h-3.5 w-3.5 text-accent-500" />
+              Hamare Real Projects
+            </span>
+            <h2 className="mt-4 font-display text-3xl font-semibold text-brand-950 sm:text-4xl">
+              Kaam jo <span className="gradient-text">khud bolta hai</span>
+            </h2>
+            {category.galleryNote && (
+              <p className="mt-4 leading-relaxed text-brand-700/80">
+                {category.galleryNote}
+              </p>
+            )}
+          </div>
+          <GalleryMarquee photos={category.gallery} />
+        </div>
+      )}
 
       {/* CTA band */}
       <div className="mt-16 flex flex-col items-center justify-between gap-6 rounded-3xl bg-gradient-to-r from-brand-700 to-brand-900 p-8 text-white sm:flex-row sm:p-12">

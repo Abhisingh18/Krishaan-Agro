@@ -15,7 +15,7 @@ export default function Services() {
         eyebrow="What We Do"
         title={
           <>
-            Five verticals, <span className="gradient-text">one mission</span>
+            Four verticals, <span className="gradient-text">one mission</span>
           </>
         }
         subtitle="A complete agriculture ecosystem — explore the solution that fits your land, your city or your business."
