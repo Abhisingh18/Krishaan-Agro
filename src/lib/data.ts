@@ -44,7 +44,7 @@ export const categories: Category[] = [
     tagline: "End-to-end agri solutions",
     description:
       "From farm to market — a complete ecosystem of trade, machinery, lab testing and advisory built to make Indian agriculture profitable and future-ready.",
-    image: img("photo-1595841696677-6489ff3f8cd1"),
+    image: img("photo-1530836369250-ef72a3f5cda8"),
     accent: "brand",
     items: [
       {
@@ -231,6 +231,129 @@ export const categories: Category[] = [
     ),
     galleryNote:
       "Ye photos hamare asli contract farming operations ki hain — Bihar ke kheton mein harvest procurement, weighing aur record-keeping se lekar gladiolus jaise floriculture crops ki cultivation tak. Assured buy-back sirf vaada nahi, hamara roz ka kaam hai — aur ye tasveerein iska saboot hain.",
+  },
+  {
+    slug: "training-program",
+    title: "Training Program",
+    tagline: "Seekho, ugao, kamao",
+    description:
+      "Kisaano, students aur agripreneurs ke liye practical training — modern kheti ki har technique, expert trainers ke saath hands-on seekhiye.",
+    image: img("photo-1524178232363-1fb2b075b655"),
+    accent: "brand",
+    items: [
+      {
+        name: "Smart Farming Training",
+        desc: "Hydroponics, polyhouse aur protected cultivation ki hands-on training — hamare operational farms par.",
+        image: "/smart-farming/sf18.jpg",
+      },
+      {
+        name: "Organic Farming Training",
+        desc: "Vermicompost, bio-pesticides aur organic certification tak — chemical-free kheti ka poora raasta.",
+        image: img("photo-1611843467160-25afb8df1074"),
+      },
+      {
+        name: "Floriculture Training",
+        desc: "Gladiolus, genda aur rajnigandha jaise flower crops ki commercial cultivation seekhiye.",
+        image: "/contract-farming/cf11.jpg",
+      },
+      {
+        name: "Urban Gardening Workshop",
+        desc: "Terrace aur balcony gardening ke weekend workshops — ghar se hi shuruat karein.",
+        image: "/urban/u1.jpg",
+      },
+      {
+        name: "Agri-Entrepreneurship Training",
+        desc: "Farm business planning, costing aur market linkage — kheti ko business banana seekhiye.",
+        image: img("photo-1544531585-9847b68c8c86"),
+      },
+      {
+        name: "Soil & Crop Management",
+        desc: "Soil testing reports samajhna, nutrient management aur crop planning ki training.",
+        image: img("photo-1579154204601-01588f351e67"),
+      },
+    ],
+  },
+  {
+    slug: "internship",
+    title: "Internship",
+    tagline: "Career ki shuruaat khet se",
+    description:
+      "Agriculture students aur fresh graduates ke liye certified internships — real farms, real projects aur industry experts ki mentorship ke saath.",
+    image: img("photo-1523240795612-9a054b0db644"),
+    accent: "accent",
+    items: [
+      {
+        name: "Agronomy Internship",
+        desc: "Field visits, crop monitoring aur advisory ka real on-ground experience.",
+        image: "/trust/t7.jpg",
+      },
+      {
+        name: "Hydroponics Internship",
+        desc: "Soil-less farming systems ka operation aur management — hamare hydroponic farms par.",
+        image: "/smart-farming/sf25.jpg",
+      },
+      {
+        name: "Floriculture Internship",
+        desc: "Flower crop production se harvest aur market tak ka complete cycle.",
+        image: "/contract-farming/cf13.jpg",
+      },
+      {
+        name: "Agri-Business & Marketing",
+        desc: "Market linkage, procurement aur agri-trade operations ki practical learning.",
+        image: img("photo-1454165804606-c3d57bc86b40"),
+      },
+      {
+        name: "Soil Lab Internship",
+        desc: "Soil testing lab mein NPK, pH analysis aur report making ki training.",
+        image: img("photo-1582719478250-c89cae4dc85b"),
+      },
+      {
+        name: "Field Research & Data",
+        desc: "Crop trials, data collection aur record-keeping — research career ki neev.",
+        image: img("photo-1500382017468-9049fed747ef"),
+      },
+    ],
+  },
+  {
+    slug: "soil-testing",
+    title: "Soil Testing",
+    tagline: "Mitti jaano, fasal badhao",
+    description:
+      "Accredited soil testing lab — NPK, pH aur micro-nutrients ki accurate jaanch ke saath crop-specific advisory, taaki har khaad aur har paisa sahi jagah lage.",
+    image: img("photo-1579154204601-01588f351e67"),
+    accent: "brand",
+    items: [
+      {
+        name: "Soil Sample Collection",
+        desc: "Sahi tarike se sample lena hi aadhi jaanch hai — hamari team khet se scientific sampling karti hai.",
+        image: "/smart-farming/sf1.jpg",
+      },
+      {
+        name: "NPK & Micro-Nutrient Analysis",
+        desc: "Nitrogen, Phosphorus, Potassium aur zinc-iron jaise micro-nutrients ki lab-grade testing.",
+        image: img("photo-1579154204601-01588f351e67"),
+      },
+      {
+        name: "pH & EC Testing",
+        desc: "Mitti ki acidity aur salinity ki jaanch — fasal ke liye sahi zameen ka pata.",
+        image: img("photo-1582719478250-c89cae4dc85b"),
+      },
+      {
+        name: "Soil Health Report",
+        desc: "Aasaan bhasha mein detailed report — kya kami hai, kya zyada hai, sab clear.",
+        image: img("photo-1454165804606-c3d57bc86b40"),
+      },
+      {
+        name: "Fertilizer Recommendation",
+        desc: "Report ke hisaab se exact khaad aur matra ki salah — kharcha kam, paidawar zyada.",
+        image: img("photo-1611843467160-25afb8df1074"),
+      },
+      {
+        name: "Crop-Specific Advisory",
+        desc: "Aapki mitti ke liye kaunsi fasal best hai — expert agronomist ki personalized salah.",
+        image: "/trust/t7.jpg",
+      },
+    ],
   },
 ];
 
@@ -559,6 +682,57 @@ export const awards: AwardItem[] = [
     org: "National Accreditation Body",
     category: "Recognition",
     image: img("photo-1582719478250-c89cae4dc85b"),
+  },
+];
+
+/* ------------------------------ UPCOMING EVENTS ------------------------------ */
+
+export type AgroEvent = {
+  title: string;
+  day: string;
+  month: string;
+  year: string;
+  category: string;
+  location: string;
+  image: string;
+};
+
+export const events: AgroEvent[] = [
+  {
+    title: "India Horti Expo 2026",
+    day: "19",
+    month: "Jun",
+    year: "2026",
+    category: "Agricultural & Horticulture Expo",
+    location: "India Expo Centre, Greater Noida",
+    image: img("photo-1531058020387-3be344556be6"),
+  },
+  {
+    title: "Agroworld Expo 2026",
+    day: "20",
+    month: "Nov",
+    year: "2026",
+    category: "Agricultural & Agritech Fair",
+    location: "Pragati Maidan, New Delhi",
+    image: img("photo-1540575467063-178a50c2df87"),
+  },
+  {
+    title: "Bharat Agri Tech 2027",
+    day: "08",
+    month: "Jan",
+    year: "2027",
+    category: "Agri Machinery & Technology",
+    location: "BIEC, Bengaluru",
+    image: img("photo-1505373877841-8d25f7d46678"),
+  },
+  {
+    title: "Farm-Tech India 2027",
+    day: "14",
+    month: "Feb",
+    year: "2027",
+    category: "Horticulture & Floriculture",
+    location: "Patna, Bihar",
+    image: img("photo-1511578314322-379afb476865"),
   },
 ];
 

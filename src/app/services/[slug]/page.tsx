@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { categories } from "@/lib/data";
 import PageHeader from "@/components/ui/PageHeader";
 import ServiceItems from "./ServiceItems";
+import SoilGuide from "./SoilGuide";
 
 export function generateStaticParams() {
   return categories.map((c) => ({ slug: c.slug }));
@@ -43,6 +44,7 @@ export default async function ServicePage({
         ]}
       />
       <ServiceItems category={cat} />
+      {cat.slug === "soil-testing" && <SoilGuide />}
     </>
   );
 }

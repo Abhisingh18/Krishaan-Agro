@@ -4,13 +4,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Camera, ChevronLeft, ChevronRight, X } from "lucide-react";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
-import { cn } from "@/lib/utils";
 
 const TOTAL = 31;
 const photos = Array.from({ length: TOTAL }, (_, i) => `/gallery/g${i + 1}.jpg`);
-
-// repeating masonry rhythm: some tiles tall for a dynamic layout
-const isTall = (i: number) => i % 7 === 0 || i % 7 === 3;
 
 export default function AwardsGallery() {
   const [selected, setSelected] = useState<number | null>(null);
@@ -38,33 +34,28 @@ export default function AwardsGallery() {
 
   return (
     <section className="container-x py-16">
-      {/* masonry grid */}
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+      {/* masonry: natural aspect ratio — no cropping, no repeats */}
+      <div className="columns-2 gap-4 md:columns-3 lg:columns-4">
         {photos.map((src, i) => (
           <motion.button
             key={src}
-            initial={{ opacity: 0, scale: 0.93 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.4, delay: (i % 4) * 0.05 }}
             onClick={() => setSelected(i)}
             aria-label={`Open photo ${i + 1}`}
-            className={cn(
-              "group relative overflow-hidden rounded-3xl bg-brand-900 shadow-card ring-1 ring-white/50 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-glow",
-              isTall(i) ? "row-span-2 aspect-[3/4.4]" : "aspect-[3/2.15]"
-            )}
+            className="group relative mb-4 block w-full break-inside-avoid overflow-hidden rounded-2xl bg-brand-100 shadow-card transition-all duration-500 hover:-translate-y-1 hover:shadow-glow"
           >
-            <Image
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src={src}
               alt={`Krishaan Agro moment ${i + 1}`}
-              fill
-              sizes="(max-width:768px) 50vw, 25vw"
-              className="object-cover transition-transform duration-700 group-hover:scale-110"
+              loading="lazy"
+              className="h-auto w-full transition-transform duration-700 group-hover:scale-105"
             />
             {/* hover overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-brand-950/70 via-transparent to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
-            {/* shine sweep */}
-            <div className="absolute inset-y-0 w-1/3 -translate-x-[150%] -skew-x-12 bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-1000 group-hover:translate-x-[350%]" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-brand-950/50 via-transparent to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
             {/* zoom hint */}
             <span className="absolute bottom-3 right-3 grid h-9 w-9 place-items-center rounded-full bg-white/90 text-brand-700 opacity-0 shadow-soft transition duration-500 group-hover:opacity-100">
               <Camera className="h-4 w-4" />

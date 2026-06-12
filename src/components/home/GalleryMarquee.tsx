@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
 const defaultPhotos = Array.from(
   { length: 31 },
   (_, i) => `/gallery/g${i + 1}.jpg`
@@ -16,11 +14,12 @@ function Row({
   reverse?: boolean;
   duration: string;
 }) {
+  // duplicated once for a seamless infinite loop
   const list = [...items, ...items];
   return (
     <div className="group relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
       <div
-        className="flex w-max gap-4 animate-marquee group-hover:[animation-play-state:paused]"
+        className="flex w-max items-center gap-4 animate-marquee group-hover:[animation-play-state:paused]"
         style={{
           animationDuration: duration,
           animationDirection: reverse ? "reverse" : "normal",
@@ -29,16 +28,16 @@ function Row({
         {list.map((src, i) => (
           <div
             key={`${src}-${i}`}
-            className="relative h-44 w-64 shrink-0 overflow-hidden rounded-2xl bg-brand-900 shadow-card ring-1 ring-white/50 transition-all duration-500 hover:scale-[1.04] hover:shadow-glow sm:h-52 sm:w-80"
+            className="relative h-44 shrink-0 overflow-hidden rounded-2xl bg-brand-100 shadow-card ring-1 ring-white/50 transition-all duration-500 hover:scale-[1.04] hover:shadow-glow sm:h-52"
           >
-            <Image
+            {/* natural width at fixed height — pura photo dikhta hai, koi crop nahi */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src={src}
               alt="Krishaan Agro moments"
-              fill
-              sizes="320px"
-              className="object-cover"
+              loading="lazy"
+              className="h-full w-auto"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-brand-950/30 to-transparent opacity-0 transition hover:opacity-100" />
           </div>
         ))}
       </div>
@@ -56,9 +55,9 @@ export default function GalleryMarquee({
   const rowB = photos.slice(mid);
 
   return (
-    <div className="mt-16 space-y-4">
-      <Row items={rowA} duration="55s" />
-      {rowB.length > 0 && <Row items={rowB} reverse duration="65s" />}
+    <div className="mt-14 space-y-4">
+      <Row items={rowA} duration="60s" />
+      {rowB.length > 0 && <Row items={rowB} reverse duration="75s" />}
     </div>
   );
 }

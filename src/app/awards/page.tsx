@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import PageHeader from "@/components/ui/PageHeader";
 import Stats from "@/components/home/Stats";
-import Achievements from "@/components/home/Achievements";
 import AwardsGallery from "./AwardsGallery";
 
 export const metadata: Metadata = {
@@ -20,7 +19,6 @@ export default function AwardsPage() {
       />
       <AwardsGallery />
       <Stats />
-      <Achievements />
     </>
   );
 }
