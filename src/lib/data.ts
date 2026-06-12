@@ -428,33 +428,120 @@ export const achievements = [
 
 export const founder = {
   name: "Abhishek Kumar",
-  role: "Founder & MD",
+  role: "Founder & CEO",
   linkedin: "https://www.linkedin.com/in/abhishek-kumar-88b352265/",
   image: "/founder.jpg",
   message:
     "When I started Krishaan Agro, I had one dream — to make Indian agriculture profitable, sustainable and respected. Every farmer deserves modern tools, fair markets and expert guidance. Today, with thousands of farmers in our family, we're turning that dream into a movement. We don't just sell products; we grow partnerships, and together, we grow India.",
 };
 
-export const team = [
+export const team: {
+  name: string;
+  role: string;
+  image: string;
+  linkedin?: string;
+}[] = [
   {
-    name: "Anjali Verma",
-    role: "Head of Agronomy",
-    image: img("photo-1573496359142-b8d87734a5a2"),
+    name: "Abhishek Kumar",
+    role: "Founder & CEO",
+    image: "/founder.jpg",
+    linkedin: "https://www.linkedin.com/in/abhishek-kumar-88b352265/",
   },
   {
-    name: "Rohit Sharma",
-    role: "Smart Farming Lead",
-    image: img("photo-1500648767791-00dcc994a43e"),
+    name: "Ujjawal Kumar",
+    role: "Co-Founder",
+    image: "/team-ujjawal.jpg",
   },
   {
-    name: "Priya Nair",
-    role: "Urban Gardening Expert",
-    image: img("photo-1580489944761-15a19d654956"),
+    name: "Pawan Kumar",
+    role: "CMO",
+    image: "/team-pawan.jpg",
   },
   {
-    name: "Aman Gupta",
-    role: "Market Linkage Manager",
-    image: img("photo-1519085360753-af0119f7cbe7"),
+    // TODO: real photo — save as public/team-deepak.jpg and update path
+    name: "Deepak Kumar",
+    role: "COO",
+    image: img("photo-1472099645785-5658abf4ff4e"),
+  },
+];
+
+/* ------------------------------ AWARDS & GALLERY ------------------------------ */
+
+export type AwardItem = {
+  title: string;
+  year: string;
+  org: string;
+  category: "Award" | "Event" | "Recognition";
+  image: string;
+  tall?: boolean;
+};
+
+export const awards: AwardItem[] = [
+  {
+    title: "Best Agri-Startup Award",
+    year: "2024",
+    org: "State Agriculture Board",
+    category: "Award",
+    image: img("photo-1567427017947-545c5f8d16ad"),
+    tall: true,
+  },
+  {
+    title: "Innovation in Smart Farming",
+    year: "2024",
+    org: "National AgriTech Summit",
+    category: "Award",
+    image: img("photo-1579389083078-4e7018379f7e"),
+  },
+  {
+    title: "Agri Expo Felicitation",
+    year: "2023",
+    org: "Kisan Mela, Bihar",
+    category: "Event",
+    image: img("photo-1540575467063-178a50c2df87"),
+  },
+  {
+    title: "Excellence in Rural Impact",
+    year: "2023",
+    org: "Agri Business Conclave",
+    category: "Recognition",
+    image: img("photo-1531058020387-3be344556be6"),
+    tall: true,
+  },
+  {
+    title: "Farmer Training Workshop",
+    year: "2023",
+    org: "Krishaan Agro Academy",
+    category: "Event",
+    image: img("photo-1524178232363-1fb2b075b655"),
+  },
+  {
+    title: "Startup Recognition",
+    year: "2022",
+    org: "Startup India Showcase",
+    category: "Recognition",
+    image: img("photo-1511578314322-379afb476865"),
+  },
+  {
+    title: "Agri Conference Keynote",
+    year: "2022",
+    org: "AgriVision Conference",
+    category: "Event",
+    image: img("photo-1505373877841-8d25f7d46678"),
+    tall: true,
+  },
+  {
+    title: "Community Impact Honour",
+    year: "2022",
+    org: "Rural Development Forum",
+    category: "Award",
+    image: img("photo-1475721027785-f74eccf877e2"),
+  },
+  {
+    title: "Soil Lab Accreditation",
+    year: "2022",
+    org: "National Accreditation Body",
+    category: "Recognition",
+    image: img("photo-1582719478250-c89cae4dc85b"),
   },
 ];
 

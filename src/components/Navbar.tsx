@@ -19,6 +19,7 @@ import { cn, SITE, whatsappLink } from "@/lib/utils";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Shop", href: "/shop" },
+  { label: "Awards", href: "/awards" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];

@@ -1,6 +1,11 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import {
   ArrowRight,
   Play,
@@ -11,10 +16,35 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
-const heroImg =
-  "https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=1400&q=80";
+const heroSlides = [
+  {
+    src: "https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=1400&q=80",
+    alt: "Aerial view of tractor in green fields",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1400&q=80",
+    alt: "Lush green farmland",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1400&q=80",
+    alt: "Farmer in golden field at sunset",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1592419044706-39796d40f98c?auto=format&fit=crop&w=1400&q=80",
+    alt: "Modern smart farming",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1400&q=80",
+    alt: "Sustainable green agriculture",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=1400&q=80",
+    alt: "Fresh farm harvest",
+  },
+];
+
 const collageImg =
   "https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=700&q=80";
 const float1 =
@@ -35,6 +65,16 @@ const miniStats = [
 
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null);
+  const [slide, setSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(
+      () => setSlide((s) => (s + 1) % heroSlides.length),
+      4500
+    );
+    return () => clearInterval(timer);
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -78,15 +118,15 @@ export default function Hero() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-400 opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-500" />
             </span>
-            India&apos;s Smart Agriculture Partner
+            India&apos;s Trusted Agri-Growth Partner
           </motion.span>
 
           {/* headline */}
-          <h1 className="mt-6 font-display text-[2.75rem] font-bold leading-[1.06] text-brand-950 sm:text-5xl lg:text-6xl xl:text-[4.25rem] xl:leading-[1.05]">
-            <AnimatedLine delay={0.1}>Growing a</AnimatedLine>{" "}
+          <h1 className="mt-6 font-display text-[2.6rem] font-bold leading-[1.08] text-brand-950 sm:text-5xl lg:text-6xl xl:text-[4rem] xl:leading-[1.06]">
+            <AnimatedLine delay={0.1}>Smart Kheti,</AnimatedLine>{" "}
             <span className="relative inline-block">
               <AnimatedLine delay={0.2}>
-                <span className="gradient-text">Greener</span>
+                <span className="gradient-text">Zyada Munafa,</span>
               </AnimatedLine>
               <motion.svg
                 viewBox="0 0 300 16"
@@ -106,8 +146,8 @@ export default function Hero() {
               </motion.svg>
             </span>
             <br />
-            <AnimatedLine delay={0.3}>India, together</AnimatedLine>{" "}
-            <AnimatedLine delay={0.4}>🌱</AnimatedLine>
+            <AnimatedLine delay={0.3}>Pakka Bazaar</AnimatedLine>{" "}
+            <AnimatedLine delay={0.4}>🌾</AnimatedLine>
           </h1>
 
           {/* subtext */}
@@ -117,9 +157,12 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="mt-6 text-base leading-relaxed text-brand-800/70 sm:text-lg"
           >
-            From smart &amp; contract farming to urban gardening, agri machinery
-            and premium farm products — Krishaan Agro brings modern technology
-            and assured markets to every farmer&apos;s doorstep.
+            Beej se bazaar tak — Krishaan Agro har kadam pe aapke saath.{" "}
+            <span className="font-semibold text-brand-800">
+              Smart farming technology, expert guidance, premium inputs aur
+              guaranteed buy-back
+            </span>{" "}
+            — sab ek hi chhat ke neeche. Aapki mehnat, hamari guarantee. 🤝
           </motion.p>
 
           {/* CTAs */}
@@ -175,9 +218,8 @@ export default function Hero() {
                   ))}
                 </div>
                 <p className="mt-0.5 text-xs font-medium text-brand-700">
-                  Trusted by{" "}
                   <span className="font-bold text-brand-800">12,000+</span>{" "}
-                  farmers
+                  kisaan parivaaron ka bharosa
                 </p>
               </div>
             </div>
@@ -231,23 +273,47 @@ export default function Hero() {
             </svg>
           </motion.div>
 
-          {/* MAIN image — slow ken-burns zoom */}
+          {/* MAIN image — auto slideshow with crossfade + ken-burns */}
           <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] bg-brand-900 shadow-glow ring-1 ring-white/40">
-            <motion.div
-              animate={{ scale: [1, 1.08, 1] }}
-              transition={{ duration: 24, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute inset-0"
-            >
-              <Image
-                src={heroImg}
-                alt="Smart farming at Krishaan Agro"
-                fill
-                priority
-                sizes="(max-width:1024px) 90vw, 40vw"
-                className="object-cover"
-              />
-            </motion.div>
+            <AnimatePresence>
+              <motion.div
+                key={slide}
+                initial={{ opacity: 0, scale: 1.12 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{
+                  opacity: { duration: 1, ease: "easeInOut" },
+                  scale: { duration: 5.5, ease: "easeOut" },
+                }}
+                className="absolute inset-0"
+              >
+                <Image
+                  src={heroSlides[slide].src}
+                  alt={heroSlides[slide].alt}
+                  fill
+                  priority={slide === 0}
+                  sizes="(max-width:1024px) 90vw, 40vw"
+                  className="object-cover"
+                />
+              </motion.div>
+            </AnimatePresence>
             <div className="absolute inset-0 bg-gradient-to-t from-brand-950/70 via-transparent to-brand-950/10" />
+
+            {/* slide indicator dots */}
+            <div className="absolute bottom-4 right-4 flex gap-1.5">
+              {heroSlides.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setSlide(i)}
+                  aria-label={`Slide ${i + 1}`}
+                  className={`h-1.5 rounded-full transition-all duration-500 ${
+                    slide === i
+                      ? "w-5 bg-accent-400"
+                      : "w-1.5 bg-white/50 hover:bg-white/80"
+                  }`}
+                />
+              ))}
+            </div>
 
             {/* shine sweep on the image */}
             <motion.div

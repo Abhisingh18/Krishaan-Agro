@@ -152,6 +152,7 @@ export default function Footer() {
           <ul className="mt-4 space-y-2.5 text-sm">
             {[
               ["Shop Products", "/shop"],
+              ["Awards & Gallery", "/awards"],
               ["About Us", "/about"],
               ["Our Team", "/about#team"],
               ["Achievements", "/about#achievements"],
