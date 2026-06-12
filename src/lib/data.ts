@@ -601,11 +601,10 @@ export const testimonials = [
 
 /* ------------------------------ PARTNERS ------------------------------ */
 
-export const partners = [
-  "AgriTech India",
-  "FarmConnect",
-  "GreenGrow",
-  "BioInputs Co.",
-  "Mandi Direct",
-  "EcoHarvest",
+export const partners: { name: string; logo?: string; location?: string }[] = [
+  {
+    name: "Satbahani Agro Pvt Ltd (SAPL)",
+    logo: "/partners/sapl.jpg",
+    location: "Aurangabad, Bihar",
+  },
 ];
