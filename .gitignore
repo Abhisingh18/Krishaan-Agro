@@ -34,3 +34,5 @@ next-env.d.ts
 /src/components/*.jpeg
 /src/components/Smart forming photo/
 /src/components/Contract Farming/
+/src/components/Urban farming/
+/src/components/Trust wala photo/

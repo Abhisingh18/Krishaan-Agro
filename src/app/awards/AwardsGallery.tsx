@@ -38,15 +38,6 @@ export default function AwardsGallery() {
 
   return (
     <section className="container-x py-16">
-      <div className="mb-10 flex items-center justify-center gap-2">
-        <span className="grid h-9 w-9 place-items-center rounded-full bg-accent-500 text-white">
-          <Camera className="h-4 w-4" />
-        </span>
-        <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-600">
-          {TOTAL} Real Moments • Awards, Events &amp; Felicitations
-        </p>
-      </div>
-
       {/* masonry grid */}
       <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
         {photos.map((src, i) => (

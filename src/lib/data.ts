@@ -44,48 +44,48 @@ export const categories: Category[] = [
     tagline: "End-to-end agri solutions",
     description:
       "From farm to market — a complete ecosystem of trade, machinery, lab testing and advisory built to make Indian agriculture profitable and future-ready.",
-    image: img("photo-1625246333195-78d9c38ad449"),
+    image: img("photo-1595841696677-6489ff3f8cd1"),
     accent: "brand",
     items: [
       {
         name: "B2C Service",
         desc: "Fresh, traceable produce and inputs delivered directly to consumers.",
-        image: img("photo-1542838132-92c53300491e"),
+        image: img("photo-1610348725531-843dff563e2c"),
       },
       {
         name: "B2B Trade",
         desc: "Bulk sourcing & supply between farms, mandis, retailers and exporters.",
-        image: img("photo-1556767576-5ec41e3239ea"),
+        image: img("photo-1586201375761-83865001e31c"),
       },
       {
         name: "Agri Machinery",
         desc: "Modern tractors, tools and implements on sale and rental.",
-        image: img("photo-1605000797499-95a51c5269ae"),
+        image: img("photo-1592805144716-feeccccef5ac"),
       },
       {
         name: "Soil Testing Lab",
         desc: "Accurate NPK, pH and micro-nutrient analysis with crop advisory.",
-        image: img("photo-1582719478250-c89cae4dc85b"),
+        image: img("photo-1579154204601-01588f351e67"),
       },
       {
         name: "Agri & Farm Advisory",
-        desc: "Agronomy, farm and entrepreneurship consulting from experts.",
-        image: img("photo-1500382017468-9049fed747ef"),
+        desc: "Agronomy, farm and entrepreneurship consulting from experts — seedha khet par.",
+        image: "/trust/t7.jpg",
       },
       {
         name: "Internship / Training",
         desc: "Hands-on workshops, internships and skill programs for farmers & students.",
-        image: img("photo-1524178232363-1fb2b075b655"),
+        image: img("photo-1544531585-9847b68c8c86"),
       },
       {
         name: "Agroranto",
         desc: "Our innovative farm-tech platform connecting growers with opportunity.",
-        image: img("photo-1530836369250-ef72a3f5cda8"),
+        image: img("photo-1586771107445-d3ca888129ff"),
       },
       {
         name: "Market Linkage",
         desc: "Direct access to buyers, mandis and premium markets for better prices.",
-        image: img("photo-1488459716781-31db52582fe9"),
+        image: img("photo-1577705998148-6da4f3963bc8"),
       },
     ],
   },
@@ -95,40 +95,43 @@ export const categories: Category[] = [
     tagline: "Green cities, greener homes",
     description:
       "Transform rooftops, balconies and walls into thriving green spaces with our design, setup and maintenance services for urban India.",
-    image: img("photo-1466692476868-aef1dfb1e735"),
+    image: "/urban/u3.jpg",
     accent: "brand",
     items: [
       {
         name: "Rooftop / Terrace Gardening",
-        desc: "Turn unused terraces into productive, beautiful gardens.",
-        image: img("photo-1416879595882-3373a0480b5b"),
+        desc: "Khaali chhat ko banao productive garden — sabzi, phal aur phool, sab apni terrace par.",
+        image: "/urban/u5.jpg",
       },
       {
         name: "Vertical Gardening",
-        desc: "Lush living walls that save space and cool your home.",
-        image: img("photo-1558904541-efa843a96f01"),
+        desc: "Lush living walls jo jagah bachayein aur ghar ko thanda rakhein — style ke saath.",
+        image: "/urban/u4.jpg",
       },
       {
         name: "Windowsill Gardening",
-        desc: "Compact herb & flower setups for every window.",
-        image: img("photo-1485955900006-10f4d324d411"),
+        desc: "Balcony aur khidki ke liye compact pots setup — herbs, phool aur positive vibes.",
+        image: "/urban/u1.jpg",
       },
       {
         name: "Park Gardening",
-        desc: "Landscaping and green-space design for communities.",
-        image: img("photo-1519331379826-f10be5486c6f"),
+        desc: "Communities ke liye raised beds, landscaping aur green-space design.",
+        image: "/urban/u6.jpg",
       },
       {
         name: "Lawn Gardening",
-        desc: "Healthy, manicured lawns designed and maintained.",
-        image: img("photo-1558904541-efa843a96f01"),
+        desc: "Designer lawns with seating — design, setup aur maintenance hamari zimmedari.",
+        image: "/urban/u2.jpg",
       },
       {
         name: "Interior Designing",
-        desc: "Biophilic indoor greenery that elevates any space.",
-        image: img("photo-1493957988430-a5f2e15f39a3"),
+        desc: "Biophilic indoor greenery jo har space ko premium bana de.",
+        image: img("photo-1616046229478-9901c5536a45"),
       },
     ],
+    gallery: Array.from({ length: 6 }, (_, i) => `/urban/u${i + 1}.jpg`),
+    galleryNote:
+      "Rooftop pergola se lekar vertical walls aur balcony gardens tak — dekhiye urban gardening ke woh styles jo hum aapke ghar, society ya office ke liye design karte hain.",
   },
   {
     slug: "smart-farming",
@@ -244,7 +247,7 @@ export const products: Product[] = [
     unit: "50 kg bag",
     rating: 4.8,
     badge: "Bestseller",
-    image: img("photo-1605000797499-95a51c5269ae"),
+    image: img("photo-1500595046743-cd271d694d30"),
     short: "Balanced nutrition for higher milk yield & healthier cattle.",
     description:
       "Scientifically formulated multi-nutrient feed enriched with proteins, minerals and vitamins to boost milk production, immunity and overall cattle health.",
@@ -265,7 +268,7 @@ export const products: Product[] = [
     unit: "30 kg bag",
     rating: 4.7,
     badge: "Organic",
-    image: img("photo-1416879595882-3373a0480b5b"),
+    image: img("photo-1611843467160-25afb8df1074"),
     short: "100% organic compost for richer soil and stronger roots.",
     description:
       "Nutrient-dense vermicompost that improves soil structure, water retention and microbial life — perfect for organic farming and home gardens.",
@@ -286,7 +289,7 @@ export const products: Product[] = [
     unit: "per unit",
     rating: 4.6,
     badge: "Machinery",
-    image: img("photo-1530267981375-f0de937f5f13"),
+    image: img("photo-1589923188900-85dae523342b"),
     short: "Compact, fuel-efficient tiller for small & marginal farms.",
     description:
       "A rugged mini power tiller ideal for ploughing, weeding and inter-cultivation. Easy to operate and maintain, designed for Indian field conditions.",
@@ -306,7 +309,7 @@ export const products: Product[] = [
     mrp: 3500,
     unit: "1 acre kit",
     rating: 4.7,
-    image: img("photo-1625246333195-78d9c38ad449"),
+    image: img("photo-1622383563227-04401ab4e5ea"),
     short: "Save up to 60% water with precision drip irrigation.",
     description:
       "Complete drip irrigation kit with filters, mains, laterals and emitters. Delivers water and nutrients straight to the root zone for maximum efficiency.",
@@ -327,7 +330,7 @@ export const products: Product[] = [
     unit: "36 plants",
     rating: 4.9,
     badge: "New",
-    image: img("photo-1581092160562-40aa08e78837"),
+    image: "/smart-farming/sf18.jpg",
     short: "Grow fresh greens at home — no soil, no mess.",
     description:
       "An all-in-one hydroponic system with net pots, nutrients, pump and grow channels. Perfect for leafy greens and herbs on your balcony or terrace.",
@@ -348,7 +351,7 @@ export const products: Product[] = [
     unit: "1 litre",
     rating: 4.5,
     badge: "Organic",
-    image: img("photo-1592982537447-7440770cbfc9"),
+    image: img("photo-1615811361523-6bd03d7748e7"),
     short: "Natural pest control that's safe for crops & soil.",
     description:
       "Cold-pressed neem-based bio-pesticide that controls a wide range of pests without harming beneficial insects or leaving chemical residue.",
@@ -369,7 +372,7 @@ export const products: Product[] = [
     unit: "250 g",
     rating: 4.8,
     badge: "Superfood",
-    image: img("photo-1615486511484-92e172cc4fe0"),
+    image: img("photo-1610440042657-612c34d95e9f"),
     short: "Nutrient-packed superfood from our contract farms.",
     description:
       "Naturally dried and finely milled moringa leaf powder, rich in iron, calcium and antioxidants — sourced directly from Krishaan Agro contract farms.",
@@ -390,7 +393,7 @@ export const products: Product[] = [
     unit: "per unit",
     rating: 4.6,
     badge: "New",
-    image: img("photo-1558904541-efa843a96f01"),
+    image: "/smart-farming/sf25.jpg",
     short: "Grow more in less space with a stackable garden tower.",
     description:
       "Modular vertical grow tower that lets you cultivate up to 20 plants in a single sq.ft. footprint — ideal for urban balconies and terraces.",

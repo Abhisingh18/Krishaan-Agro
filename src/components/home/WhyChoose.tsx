@@ -70,8 +70,8 @@ export default function WhyChoose() {
             className="group relative aspect-[5/6] overflow-hidden rounded-[2rem] bg-brand-900 shadow-glow ring-1 ring-white/50"
           >
             <Image
-              src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80"
-              alt="Krishaan Agro farmers"
+              src="/trust/t10.jpg"
+              alt="Krishaan Agro team with farmers in Bihar"
               fill
               sizes="(max-width:1024px) 90vw, 45vw"
               className="object-cover transition-transform duration-[2000ms] group-hover:scale-110"
