@@ -29,14 +29,13 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.6, delay: i * 0.08 }}
-            className="group relative flex flex-col overflow-hidden rounded-3xl border border-brand-100 bg-white shadow-card transition-all duration-500 hover:-translate-y-2 hover:border-transparent hover:shadow-glow"
+            className="group relative overflow-hidden rounded-3xl border border-brand-100 bg-white shadow-card transition-all duration-500 hover:-translate-y-2 hover:border-transparent hover:shadow-glow"
           >
             <Link
               href={`/services/${c.slug}`}
-              className="absolute inset-0 z-10"
               aria-label={`Explore ${c.title}`}
-            />
-
+              className="flex h-full flex-col"
+            >
             {/* top gradient line on hover */}
             <span
               className={cn(
@@ -99,6 +98,7 @@ export default function Services() {
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:rotate-45" />
               </span>
             </div>
+            </Link>
           </motion.div>
         ))}
       </div>

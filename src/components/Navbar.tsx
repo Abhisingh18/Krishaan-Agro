@@ -91,7 +91,11 @@ export default function Navbar() {
               onMouseEnter={() => setServicesOpen(true)}
               onMouseLeave={() => setServicesOpen(false)}
             >
-              <button className="flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-brand-800 transition hover:bg-brand-100">
+              <button
+                onClick={() => setServicesOpen((o) => !o)}
+                aria-expanded={servicesOpen}
+                className="flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-brand-800 transition hover:bg-brand-100"
+              >
                 Services
                 <ChevronDown
                   className={cn(
@@ -117,6 +121,7 @@ export default function Navbar() {
                             <Link
                               key={c.slug}
                               href={`/services/${c.slug}`}
+                              onClick={() => setServicesOpen(false)}
                               onMouseEnter={() => setActiveCat(idx)}
                               className={cn(
                                 "group/item flex items-center gap-3 rounded-2xl p-3 transition-all duration-300",

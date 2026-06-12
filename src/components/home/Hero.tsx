@@ -388,10 +388,6 @@ export default function Hero() {
                 sizes="220px"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-950/70 to-transparent" />
-              <p className="absolute bottom-2.5 left-3 text-xs font-bold text-white [text-shadow:_0_1px_6px_rgba(0,0,0,0.8)]">
-                Smart Greenhouses
-              </p>
             </motion.div>
           </motion.div>
 

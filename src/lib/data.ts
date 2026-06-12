@@ -63,19 +63,9 @@ export const categories: Category[] = [
         image: img("photo-1592805144716-feeccccef5ac"),
       },
       {
-        name: "Soil Testing Lab",
-        desc: "Accurate NPK, pH and micro-nutrient analysis with crop advisory.",
-        image: img("photo-1579154204601-01588f351e67"),
-      },
-      {
         name: "Agri & Farm Advisory",
         desc: "Agronomy, farm and entrepreneurship consulting from experts — seedha khet par.",
         image: "/trust/t7.jpg",
-      },
-      {
-        name: "Internship / Training",
-        desc: "Hands-on workshops, internships and skill programs for farmers & students.",
-        image: img("photo-1544531585-9847b68c8c86"),
       },
       {
         name: "Agroranto",

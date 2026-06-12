@@ -158,7 +158,7 @@ export default function AboutPage() {
                   className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${v.gradient}`}
                 />
                 {/* big ghost number */}
-                <span className="pointer-events-none absolute -right-2 -top-4 font-display text-8xl font-bold text-brand-50">
+                <span className="pointer-events-none absolute -right-2 -top-4 bg-gradient-to-br from-brand-300 to-accent-300 bg-clip-text font-display text-8xl font-bold text-transparent">
                   0{i + 1}
                 </span>
                 <span

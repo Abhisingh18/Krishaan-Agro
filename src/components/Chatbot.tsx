@@ -9,34 +9,91 @@ type Msg = { from: "bot" | "user"; text: string };
 
 const QUICK = [
   "What services do you offer?",
-  "Tell me about smart farming",
+  "Soil testing kaise hota hai?",
+  "Training / Internship details",
   "Contract farming buy-back?",
-  "How do I order products?",
 ];
 
 function getReply(input: string): string {
   const q = input.toLowerCase();
-  if (/(service|offer|do you do|provide)/.test(q))
-    return "We offer 5 verticals 🌱:\n• Krishaan Agro Services (B2C, B2B, machinery, soil lab, advisory, training, market linkage)\n• Urban Gardening\n• Smart Farming\n• Contract Farming\n• Premium Agri Products\n\nWhich one interests you?";
-  if (/(smart farming|hydroponic|polyhouse|vertical|multilayer)/.test(q))
-    return "Smart Farming 🚜 includes Polyhouse setup, Hydroponic farm setup & farming, Multilayer and Vertical farming — high yield with less water & space. Want a free consultation?";
-  if (/(urban|garden|rooftop|terrace|balcony)/.test(q))
-    return "Urban Gardening 🌿: rooftop/terrace, vertical, windowsill, park & lawn gardening, plus biophilic interior design. We design, set up and maintain it all!";
-  if (/(contract|buy.?back|aloe|moringa|tulsi|ashwagandha)/.test(q))
-    return "In Contract Farming 🤝 we provide inputs, technical guidance AND guaranteed buy-back for crops like Aloevera, Moringa, Tulsi, Ashwagandha, Rose, Marigold & more.";
-  if (/(soil|test|lab|npk)/.test(q))
-    return "Our accredited Soil Testing Lab 🧪 analyses NPK, pH and micro-nutrients, then gives you a crop-specific advisory report. Shall I help you book a test?";
-  if (/(order|buy|product|price|cod|delivery|cart)/.test(q))
-    return "Easy! 🛒 Browse the Shop, add items to cart, and checkout via WhatsApp with Cash on Delivery — no advance payment. Want me to open WhatsApp for you?";
-  if (/(machinery|tractor|tiller|equipment)/.test(q))
-    return "We offer modern Agri Machinery 🚜 for sale & rental — tillers, tools and implements suited for Indian fields. Check the Shop for current models!";
-  if (/(price|cost|quote|rate)/.test(q))
-    return "Pricing depends on crop, area and service. Share your details on WhatsApp and our team will send a custom quote within hours. 💬";
-  if (/(hi|hello|hey|namaste|namaskar)/.test(q))
-    return "Namaste! 🙏 I'm Agri-bot, your Krishaan Agro assistant. Ask me about our services, products or farming solutions!";
-  if (/(contact|call|number|whatsapp|reach)/.test(q))
-    return `You can call us at ${SITE.phoneDisplay} or tap the WhatsApp button below to chat with our team directly. 📞`;
-  return "Great question! 🌾 Our experts can help you best. Tap below to chat on WhatsApp, or ask me about services, smart farming, products or soil testing.";
+
+  // services overview
+  if (/(service|offer|do you do|provide|kya karte)/.test(q))
+    return "We offer 7 services 🌱:\n• Krishaan Agro Services (B2C, B2B, machinery, advisory, market linkage)\n• Urban Gardening\n• Smart Farming\n• Contract Farming\n• Training Program\n• Internship\n• Soil Testing\n\nPlus premium agri products in our Shop. Which one interests you?";
+
+  // training
+  if (/(training|workshop|seekh|sikhna|course)/.test(q))
+    return "Training Program 🎓 — Seekho, ugao, kamao!\n• Smart Farming (hydroponics/polyhouse)\n• Organic Farming\n• Floriculture\n• Urban Gardening workshops\n• Agri-Entrepreneurship\n• Soil & Crop Management\n\nHands-on training hamare operational farms par. WhatsApp pe details maangein!";
+
+  // internship
+  if (/(internship|intern|student|graduate|career)/.test(q))
+    return "Internship 💼 — Career ki shuruaat khet se!\nCertified internships for students & graduates:\n• Agronomy • Hydroponics • Floriculture\n• Agri-Business & Marketing • Soil Lab • Field Research\n\nReal farms, real projects, expert mentorship. Apply via WhatsApp!";
+
+  // smart farming
+  if (/(smart farming|hydroponic|polyhouse|vertical farm|multilayer)/.test(q))
+    return "Smart Farming 🚜 — Polyhouse setup, Hydroponic farm setup & farming, Multilayer (A-frame racks) and Vertical farming. 90% kam paani, zero soil, year-round production. Hamare website par real project photos bhi hain! Free consultation chahiye?";
+
+  // urban gardening
+  if (/(urban|garden|rooftop|terrace|balcony|lawn|interior)/.test(q))
+    return "Urban Gardening 🌿 — rooftop/terrace, vertical walls, windowsill, park & lawn gardening, plus biophilic interior design. Ghar, society ya office — hum design, setup aur maintenance sab karte hain!";
+
+  // contract farming
+  if (/(contract|buy.?back|gladiolus|marigold|genda|rajnigandha|tuberose|guldaudi|chrysanthemum|flower|phool)/.test(q))
+    return "Contract Farming 🤝 — full input support, technical guidance AND guaranteed buy-back!\nCrops: Gladiolus, Marigold (Genda), Tuberose (Rajnigandha), Chrysanthemum (Guldaudi), mixed floriculture & herbal crops.\nHum khet se hi weighing, grading aur on-the-spot procurement karte hain — record ke saath. 🌸";
+
+  // soil testing
+  if (/(soil|mitti|test|lab|npk|ph )/.test(q))
+    return "Soil Testing 🧪 — Mitti jaano, fasal badhao!\nHum 14 parameters test karte hain: NPK, pH, EC, micro-nutrients sab. Report aasaan bhasha mein samjhate hain + fertilizer recommendation bhi.\n\nSample buaai se ~1 mahina pehle bhejein. Poora sampling guide website ke Soil Testing page par hai. Book karne ke liye WhatsApp karein!";
+
+  // products / order
+  if (/(order|buy|product|shop|cod|delivery|cart|kharid)/.test(q))
+    return "Shop 🛒 mein 8 premium products hain — cattle feed, vermicompost, power tiller, drip irrigation, hydroponic kits, neem bio-pesticide, moringa powder & grow towers.\n\nCart mein daalo → WhatsApp pe order → Cash on Delivery. Best price enquiry par milta hai — koi advance payment nahi!";
+
+  // machinery
+  if (/(machinery|tractor|tiller|equipment|aujar)/.test(q))
+    return "Agri Machinery 🚜 — modern tractors, tillers, tools aur implements — sale & rental dono. Mini Power Tiller shop mein available hai. Details ke liye WhatsApp karein!";
+
+  // pricing
+  if (/(price|cost|quote|rate|kitna|paisa|fees)/.test(q))
+    return "Pricing crop, area aur service ke hisaab se hoti hai — isliye hum 'Best price on enquiry' model use karte hain. 💬 WhatsApp pe apni requirement bhejein, team turant best quote degi. Koi hidden charge nahi!";
+
+  // team / founder
+  if (/(founder|ceo|team|abhishek|ujjawal|pawan|deepak|kaun|who)/.test(q))
+    return "Hamari team 👥:\n• Abhishek Kumar — Founder & CEO\n• Ujjawal Kumar — Co-Founder\n• Pawan Kumar — CMO\n• Deepak Kumar — COO\n\nAbout page par founder ka message aur poori team ki photos hain!";
+
+  // partner
+  if (/(partner|sapl|satbahani|collab)/.test(q))
+    return "Hamara official partner hai Satbahani Agro Pvt Ltd (SAPL), Aurangabad 🤝 — saath milkar hum Bihar ke kisaano tak behtar services pahuncha rahe hain.";
+
+  // awards / gallery
+  if (/(award|gallery|photo|achievement|moment)/.test(q))
+    return "Awards & Gallery 🏆 — humein kai awards aur felicitations mile hain! Website ke 'Awards' page par 31 real photos hain — award ceremonies, kisan events aur field moments. Zaroor dekhein!";
+
+  // events
+  if (/(event|expo|fair|mela)/.test(q))
+    return "Upcoming Events 📅:\n• India Horti Expo 2026 (19 Jun, Greater Noida)\n• Agroworld Expo 2026 (20 Nov, New Delhi)\n• Bharat Agri Tech 2027 (08 Jan, Bengaluru)\n• Farm-Tech India 2027 (14 Feb, Patna)\n\nIn events mein humse milein! Details homepage par hain.";
+
+  // address / location
+  if (/(address|location|kahan|office|aurangabad|bihar|visit)/.test(q))
+    return `Hamara office 📍:\n${SITE.address}\n\nMon–Sat, 9am–7pm. Aane se pehle ek baar call/WhatsApp kar lein: ${SITE.phoneDisplay}`;
+
+  // email
+  if (/(email|mail)/.test(q))
+    return `Aap humein email kar sakte hain: ${SITE.email} 📧 — ya website ke Contact page ka form bharein, message seedha hamari team tak pahunchta hai.`;
+
+  // greeting
+  if (/(^hi\b|hello|hey|namaste|namaskar|ram ram)/.test(q))
+    return "Namaste! 🙏 Main Agri-bot hoon — Krishaan Agro ka assistant. Services, products, training, soil testing, contract farming — kuch bhi puchhiye!";
+
+  // thanks
+  if (/(thank|dhanyawad|shukriya|badhiya|nice|great)/.test(q))
+    return "Dhanyawad! 🙏🌱 Krishaan Agro ko chunne ke liye shukriya. Aur koi sawaal ho toh zaroor puchhein — ya WhatsApp pe team se seedha baat karein!";
+
+  // contact
+  if (/(contact|call|number|whatsapp|phone|reach|baat)/.test(q))
+    return `You can call us at ${SITE.phoneDisplay} or tap the WhatsApp button below to chat with our team directly. 📞 Email: ${SITE.email}`;
+
+  return "Great question! 🌾 Main in topics mein madad kar sakta hoon: services, smart farming, urban gardening, contract farming, training, internship, soil testing, products, events, team aur contact. Ya neeche WhatsApp button se team se seedha baat karein!";
 }
 
 export default function Chatbot() {
