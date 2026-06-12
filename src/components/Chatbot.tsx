@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Bot, Send, Sparkles, X, Leaf } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { whatsappLink } from "@/lib/utils";
+import { SITE, whatsappLink } from "@/lib/utils";
 
 type Msg = { from: "bot" | "user"; text: string };
 
@@ -35,7 +35,7 @@ function getReply(input: string): string {
   if (/(hi|hello|hey|namaste|namaskar)/.test(q))
     return "Namaste! 🙏 I'm Agri-bot, your Krishaan Agro assistant. Ask me about our services, products or farming solutions!";
   if (/(contact|call|number|whatsapp|reach)/.test(q))
-    return "You can call us at +91 99999 99999 or tap the WhatsApp button below to chat with our team directly. 📞";
+    return `You can call us at ${SITE.phoneDisplay} or tap the WhatsApp button below to chat with our team directly. 📞`;
   return "Great question! 🌾 Our experts can help you best. Tap below to chat on WhatsApp, or ask me about services, smart farming, products or soil testing.";
 }
 

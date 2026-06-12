@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, MessageCircle, Phone } from "lucide-react";
 import Link from "next/link";
-import { whatsappLink } from "@/lib/utils";
+import { SITE, whatsappLink } from "@/lib/utils";
 
 export default function CTA() {
   return (
@@ -40,7 +40,7 @@ export default function CTA() {
             >
               <MessageCircle className="h-4 w-4" /> Chat on WhatsApp
             </a>
-            <a href="tel:+919999999999" className="btn bg-brand-900/30 text-white ring-1 ring-white/40 hover:bg-brand-900/50">
+            <a href={`tel:${SITE.phoneTel}`} className="btn bg-brand-900/30 text-white ring-1 ring-white/40 hover:bg-brand-900/50">
               <Phone className="h-4 w-4" /> Call Us
             </a>
             <Link href="/contact" className="btn bg-brand-900 text-white hover:bg-brand-950">

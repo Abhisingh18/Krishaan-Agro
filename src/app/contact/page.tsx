@@ -3,7 +3,7 @@ import { Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import PageHeader from "@/components/ui/PageHeader";
 import Reveal from "@/components/ui/Reveal";
 import ContactForm from "./ContactForm";
-import { whatsappLink } from "@/lib/utils";
+import { SITE, whatsappLink } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Contact Us — Krishaan Agro",
@@ -15,17 +15,21 @@ const info = [
   {
     icon: MapPin,
     title: "Visit Us",
-    lines: ["Krishaan Agro HQ", "Agri Hub, India"],
+    lines: [
+      "Govind Bhawan, Veer Kunwar Singh Path",
+      "New Area, Behind US Residency",
+      "Aurangabad, Bihar - 824101",
+    ],
   },
   {
     icon: Phone,
     title: "Call Us",
-    lines: ["+91 99999 99999", "Mon–Sat, 9am–7pm"],
+    lines: [SITE.phoneDisplay, "Mon–Sat, 9am–7pm"],
   },
   {
     icon: Mail,
     title: "Email Us",
-    lines: ["hello@krishaanagro.com", "support@krishaanagro.com"],
+    lines: [SITE.email],
   },
   {
     icon: Clock,
@@ -90,7 +94,7 @@ export default function ContactPage() {
               <div className="mt-4 overflow-hidden rounded-3xl border border-brand-100 shadow-card">
                 <iframe
                   title="Krishaan Agro location"
-                  src="https://www.google.com/maps?q=India&output=embed"
+                  src="https://www.google.com/maps?q=Govind%20Bhawan%2C%20Veer%20Kunwar%20Singh%20Path%2C%20New%20Area%2C%20Aurangabad%2C%20Bihar%20824101&output=embed"
                   className="h-64 w-full"
                   loading="lazy"
                 />

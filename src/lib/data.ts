@@ -428,10 +428,9 @@ export const achievements = [
 
 export const founder = {
   name: "Abhishek Kumar",
-  role: "Founder & CEO",
+  role: "Founder & MD",
   linkedin: "https://www.linkedin.com/in/abhishek-kumar-88b352265/",
-  // TODO: real photo — save founder photo as public/founder.jpg and change this to "/founder.jpg"
-  image: img("photo-1507003211169-0a1dd7228f2d"),
+  image: "/founder.jpg",
   message:
     "When I started Krishaan Agro, I had one dream — to make Indian agriculture profitable, sustainable and respected. Every farmer deserves modern tools, fair markets and expert guidance. Today, with thousands of farmers in our family, we're turning that dream into a movement. We don't just sell products; we grow partnerships, and together, we grow India.",
 };

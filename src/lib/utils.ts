@@ -19,19 +19,18 @@ export function formatINR(amount: number) {
  */
 export const SITE = {
   name: "Krishaan Agro",
-  // TODO: replace with real phone number
-  phoneDisplay: "+91 99999 99999",
-  phoneTel: "+919999999999",
-  // TODO: replace with real WhatsApp number (used in cart checkout + chatbot)
-  whatsapp: "919999999999",
-  // derived from LinkedIn handle krishaanagro.in — confirm with client
-  email: "info@krishaanagro.in",
+  phoneDisplay: "+91 97715 72816",
+  phoneTel: "+919771572816",
+  // WhatsApp (used in cart checkout + chatbot)
+  whatsapp: "919771572816",
+  email: "krishaanagro1@gmail.com",
   website: "www.krishaanagro.in",
-  // TODO: replace with real address
-  address: "Krishaan Agro HQ, India",
+  address:
+    "Govind Bhawan, Veer Kunwar Singh Path, New Area, Behind US Residency, Aurangabad, Bihar - 824101",
+  addressShort: "Aurangabad, Bihar - 824101",
   socials: {
     linkedin: "https://www.linkedin.com/company/krishaanagro.in/",
-    facebook: "#",
+    facebook: "https://www.facebook.com/share/17uou5m38Q/",
     instagram: "#",
     youtube: "#",
   },

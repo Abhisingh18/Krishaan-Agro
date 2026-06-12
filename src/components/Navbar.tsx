@@ -14,7 +14,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { categories } from "@/lib/data";
 import { useCart } from "./cart/CartProvider";
-import { cn, whatsappLink } from "@/lib/utils";
+import { cn, SITE, whatsappLink } from "@/lib/utils";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -258,11 +258,11 @@ export default function Navbar() {
 
           <div className="flex items-center gap-2">
             <a
-              href="tel:+919999999999"
+              href={`tel:${SITE.phoneTel}`}
               className="hidden items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-brand-800 transition hover:bg-brand-100 xl:flex"
             >
               <Phone className="h-4 w-4 text-brand-600" />
-              +91 99999 99999
+              {SITE.phoneDisplay}
             </a>
             <button
               onClick={open}
@@ -353,7 +353,7 @@ export default function Navbar() {
                 ))}
               </nav>
               <a
-                href="tel:+919999999999"
+                href={`tel:${SITE.phoneTel}`}
                 className="btn-primary mt-auto w-full"
               >
                 <Phone className="h-4 w-4" /> Call Us
