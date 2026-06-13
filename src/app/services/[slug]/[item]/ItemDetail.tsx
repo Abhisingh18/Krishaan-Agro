@@ -29,7 +29,10 @@ export default function ItemDetail({
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
-          className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-brand-900 shadow-glow ring-1 ring-white/40"
+          className={cn(
+            "relative aspect-[4/3] overflow-hidden rounded-[2rem] shadow-glow ring-1 ring-white/40",
+            item.imageContain ? "bg-white p-3" : "bg-brand-900"
+          )}
         >
           <Image
             src={item.image}
@@ -37,7 +40,7 @@ export default function ItemDetail({
             fill
             priority
             sizes="(max-width:1024px) 90vw, 45vw"
-            className="object-cover"
+            className={item.imageContain ? "object-contain" : "object-cover"}
           />
           <span
             className={cn(
@@ -204,6 +207,26 @@ export default function ItemDetail({
                 />
               </motion.div>
             ))}
+          </div>
+        </div>
+      )}
+
+      {/* expert message / quote */}
+      {item.quote && (
+        <div className="mt-20">
+          <div className="mx-auto max-w-3xl rounded-3xl border border-brand-100 bg-gradient-to-br from-brand-50 to-white p-8 text-center shadow-card sm:p-12">
+            <span className="eyebrow justify-center">
+              <Sparkles className="h-3.5 w-3.5 text-accent-500" />
+              Expert Message
+            </span>
+            <p className="mt-4 font-display text-2xl font-bold text-brand-950 sm:text-3xl">
+              🌟 “{item.quote}”
+            </p>
+            {item.quoteText && (
+              <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-brand-700">
+                {item.quoteText}
+              </p>
+            )}
           </div>
         </div>
       )}

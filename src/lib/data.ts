@@ -15,6 +15,11 @@ export type ServiceItem = {
   tags?: string[];
   /** Real project photos shown as a gallery on the sub-service detail page */
   gallery?: string[];
+  /** Highlighted expert message / quote block */
+  quote?: string;
+  quoteText?: string;
+  /** Show the hero image fully (object-contain) — for product/white-bg photos */
+  imageContain?: boolean;
 };
 
 export type Category = {
@@ -586,7 +591,7 @@ export const categories: Category[] = [
       {
         name: "Soil Sample Collection",
         desc: "🌱 Soil Sampling (Mitti Ka Namuna Sangrahan) ek scientific technique hai jiske madhyam se khet ki mitti ka sahi namuna lekar uski fertility, nutrient status aur soil health ka assessment kiya jata hai. Sahi soil sample hi accurate soil testing aur fertilizer recommendation ka aadhar hota hai.",
-        image: "/soil-testing/sampling/s1.jpg",
+        image: "/soil-testing/sampling/sp2.jpg",
         highlights: [
           "Khet ke 8–10 alag-alag sthanon se mitti ka sample collect karein.",
           "Sample hamesha \"V\" shape ka gaddha khodkar lein.",
@@ -606,11 +611,13 @@ export const categories: Category[] = [
           "🚜 Scientific Crop Planning",
         ],
         gallery: [
-          "/soil-testing/sampling/s1.jpg",
-          "/soil-testing/sampling/s2.jpg",
-          "/soil-testing/sampling/s3.jpg",
-          "/soil-testing/sampling/s4.jpg",
+          "/soil-testing/sampling/sp1.jpg",
+          "/soil-testing/sampling/sp2.jpg",
+          "/soil-testing/sampling/sp3.jpg",
         ],
+        quote: "Healthy Soil = Healthy Crop = Higher Profit",
+        quoteText:
+          "Sahi Soil Sampling se hi Sahi Soil Testing hoti hai, aur Sahi Soil Testing se hi Behtar Fasal Utpadan aur Adhik Munafa milta hai. 🌱🚜📈",
       },
       {
         name: "NPK & Micro-Nutrient Analysis",
@@ -620,7 +627,8 @@ export const categories: Category[] = [
       {
         name: "pH & EC Testing",
         desc: "Mitti ki acidity aur salinity ki jaanch — fasal ke liye sahi zameen ka pata.",
-        image: img("photo-1582719478250-c89cae4dc85b"),
+        image: "/soil-testing/ph-ec-lab.jpg",
+        imageContain: true,
       },
       {
         name: "Soil Health Report",
