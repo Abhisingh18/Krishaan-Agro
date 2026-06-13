@@ -4,6 +4,7 @@ import Services from "@/components/home/Services";
 import Stats from "@/components/home/Stats";
 import WhyChoose from "@/components/home/WhyChoose";
 import Events from "@/components/home/Events";
+import UeraMolasses from "@/components/home/UeraMolasses";
 import Opportunities from "@/components/home/Opportunities";
 import Achievements from "@/components/home/Achievements";
 import Testimonials from "@/components/home/Testimonials";
@@ -18,6 +19,7 @@ export default function Home() {
       <Stats />
       <WhyChoose />
       <Events />
+      <UeraMolasses />
       <Opportunities />
       <Achievements />
       <Testimonials />
