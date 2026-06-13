@@ -67,16 +67,15 @@ export default function Events() {
               transition={{ duration: 0.5, delay: i * 0.08 }}
               className="group w-[290px] shrink-0 snap-start overflow-hidden rounded-3xl border border-brand-100 bg-white shadow-card transition-all duration-500 hover:-translate-y-2 hover:shadow-glow sm:w-[320px]"
             >
-              {/* image + date badge */}
-              <div className="relative aspect-[16/9] overflow-hidden bg-brand-900">
+              {/* banner + date badge */}
+              <div className="relative aspect-[16/9] overflow-hidden bg-white">
                 <Image
                   src={e.image}
                   alt={e.title}
                   fill
                   sizes="320px"
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="object-contain transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-950/60 to-transparent" />
                 {/* date badge */}
                 <div className="absolute left-4 top-4 overflow-hidden rounded-2xl bg-white text-center shadow-glow">
                   <p className="px-4 pt-2 font-display text-2xl font-bold leading-none text-brand-700">
