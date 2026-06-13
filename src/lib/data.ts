@@ -7,9 +7,12 @@ export type ServiceItem = {
   name: string;
   desc: string;
   image: string;
-  /** Shown in a hover/tap overlay on the service card */
+  /** Shown on the sub-service detail page */
   highlights?: string[];
   usp?: string[];
+  /** Optional chip-cloud section on the detail page (e.g. equipment list) */
+  tagsTitle?: string;
+  tags?: string[];
 };
 
 export type Category = {
@@ -132,19 +135,92 @@ export const categories: Category[] = [
         ],
       },
       {
-        name: "Agri Machinery",
-        desc: "Modern tractors, tools and implements on sale and rental.",
+        name: "Agroranto™",
+        desc: "Farm Machinery & Equipment Solutions — tractor se drone tak, rent karo ya book karo, Uber jaise aasaan.",
         image: img("photo-1592805144716-feeccccef5ac"),
+        highlights: [
+          "Tractor Rental & Booking Services",
+          "Agricultural Implements Supply",
+          "Drone Spraying Equipment Services",
+          "Seed Drill & Planter Services",
+          "Rotavator & Tillage Equipment Services",
+          "Harvesting & Threshing Machinery Support",
+        ],
+        usp: [
+          "Uber Model for Farm Equipment Booking",
+          "Farm Equipment Subscription Plans",
+          "Farm Equipment Sharing Platform",
+          "Drone-as-a-Service (DaaS)",
+        ],
+        tagsTitle: "🚜 Equipment Categories",
+        tags: [
+          "Tractors",
+          "Power Tillers",
+          "Rotavators",
+          "Seed Drills",
+          "Happy Seeders",
+          "Laser Land Levellers",
+          "Cultivators",
+          "Harrows",
+          "Reapers",
+          "Combine Harvesters",
+          "Paddy Transplanters",
+          "Straw Balers",
+          "Boom Sprayers",
+          "Agricultural Drones",
+          "Irrigation Equipment",
+        ],
       },
       {
-        name: "Agri & Farm Advisory",
-        desc: "Agronomy, farm and entrepreneurship consulting from experts — seedha khet par.",
+        name: "Agri Advisory & Agronomy",
+        desc: "Crop planning se yield optimization tak — expert agronomy advisory seedha khet par.",
         image: "/trust/t7.jpg",
+        highlights: [
+          "Crop Planning & Agronomy Advisory",
+          "Soil Health & Nutrient Management",
+          "Pest & Disease Management Solutions",
+          "Precision Farming Recommendations",
+          "Irrigation & Water Management Planning",
+          "Protected Cultivation Advisory",
+          "Organic & Natural Farming Support",
+          "Climate-Smart Agriculture Solutions",
+          "Crop Monitoring & Yield Optimization",
+          "Sustainable Farming Practices",
+        ],
       },
       {
-        name: "Agroranto",
-        desc: "Our innovative farm-tech platform connecting growers with opportunity.",
-        image: img("photo-1586771107445-d3ca888129ff"),
+        name: "Farm Advisory",
+        desc: "End-to-end farm management — planning, mechanization aur post-harvest tak ka complete saath.",
+        image: img("photo-1592419044706-39796d40f98c"),
+        highlights: [
+          "End-to-End Farm Management",
+          "Farm Development & Expansion Planning",
+          "Smart Farming Technology Integration",
+          "Farm Mechanization Solutions",
+          "Drone & Remote Sensing Advisory",
+          "Resource & Cost Optimization",
+          "Harvest & Post-Harvest Management",
+          "Farm Digitization Support",
+          "Quality Audits & Compliance Services",
+          "Market-Oriented Production Planning",
+        ],
+      },
+      {
+        name: "Agri Entrepreneurship Advisory",
+        desc: "Agribusiness shuru karna hai? DPR se funding tak — end-to-end agripreneur mentorship.",
+        image: img("photo-1454165804606-c3d57bc86b40"),
+        highlights: [
+          "Agribusiness Consulting & Strategy",
+          "Startup Registration & Compliance Support",
+          "DPR & Project Report Preparation",
+          "NABARD & Government Scheme Consultancy",
+          "Agri Loan & Funding Assistance",
+          "Investor Readiness & Pitch Development",
+          "FPO & Cooperative Development",
+          "Food Processing Business Advisory",
+          "Agri Export & Market Access Support",
+          "End-to-End Agripreneur Mentorship",
+        ],
       },
       {
         name: "Market Linkage",
@@ -306,6 +382,62 @@ export const categories: Category[] = [
     accent: "brand",
     items: [
       {
+        name: "Students Programs",
+        desc: "Agriculture students ke liye industry-ready banane wale programs — internships, smart farming, drone-GIS aur AI applications tak ka practical exposure.",
+        image: "/smart-farming/sf12.jpg",
+        highlights: [
+          "Agricultural Internships (RAWE, READY, Research)",
+          "Agribusiness & Startup Training",
+          "Smart Farming & Precision Agriculture",
+          "Drone, GIS & Remote Sensing Training",
+          "Food Processing & Value Addition",
+          "Digital Agriculture & AI Applications",
+          "Certification & Skill Development Programs",
+          "Industry Exposure & Field Learning",
+        ],
+      },
+      {
+        name: "Faculty & Scientists Programs",
+        desc: "Faculty aur researchers ke liye advanced programs — research methodology, IPR, AI-digital agriculture aur industry-academia collaboration par focus.",
+        image: img("photo-1523240795612-9a054b0db644"),
+        highlights: [
+          "Faculty Development Programs (FDPs)",
+          "Research Methodology & Scientific Writing",
+          "Patent, IPR & Innovation Management",
+          "AI & Digital Agriculture Training",
+          "Precision Farming & Climate Smart Agriculture",
+          "GIS, Data Analytics & Agricultural Modelling",
+          "Entrepreneurship & Startup Mentoring",
+          "Industry-Academia Collaboration Programs",
+        ],
+      },
+      {
+        name: "High-Demand Farmers Training Programs",
+        desc: "Kisaano ke liye sabse zyada demand wale practical training programs — organic kheti se lekar drone, dairy, poultry aur FPO development tak.",
+        image: "/contract-farming/cf11.jpg",
+        highlights: [
+          "Organic & Natural Farming",
+          "Precision Farming & Smart Agriculture",
+          "Soil Health & Nutrient Management",
+          "Integrated Pest & Disease Management (IPM)",
+          "Smart Irrigation & Water Management",
+          "Protected Cultivation (Polyhouse/Greenhouse)",
+          "Vegetable Nursery Management",
+          "Mushroom Cultivation",
+          "Beekeeping (Apiculture)",
+          "Dairy Farming Management",
+          "Goat Farming Entrepreneurship",
+          "Poultry Farming",
+          "Fish Farming & Aquaculture",
+          "Farm Mechanization & Agri Machinery Training",
+          "Agri Drone Training & Demonstration",
+          "Food Processing & Value Addition",
+          "Agri Marketing & Direct Selling",
+          "FPO Development & Farmer Collectives",
+          "Climate Smart Agriculture",
+        ],
+      },
+      {
         name: "Smart Farming Training",
         desc: "Hydroponics, polyhouse aur protected cultivation ki hands-on training — hamare operational farms par.",
         image: "/smart-farming/sf18.jpg",
@@ -343,7 +475,7 @@ export const categories: Category[] = [
     tagline: "Career ki shuruaat khet se",
     description:
       "Agriculture students aur fresh graduates ke liye certified internships — real farms, real projects aur industry experts ki mentorship ke saath.",
-    image: img("photo-1523240795612-9a054b0db644"),
+    image: "/internship/internship.png",
     accent: "accent",
     items: [
       {

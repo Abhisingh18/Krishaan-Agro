@@ -147,6 +147,31 @@ export default function ItemDetail({
         </div>
       )}
 
+      {/* tag cloud (e.g. equipment categories) */}
+      {item.tags && (
+        <div className="mt-20">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="font-display text-3xl font-semibold text-brand-950 sm:text-4xl">
+              {item.tagsTitle ?? "Categories"}
+            </h2>
+          </div>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            {item.tags.map((t, i) => (
+              <motion.span
+                key={t}
+                initial={{ opacity: 0, scale: 0.85 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: "-30px" }}
+                transition={{ duration: 0.3, delay: (i % 6) * 0.05 }}
+                className="rounded-full border border-brand-200 bg-white px-5 py-2.5 text-sm font-bold text-brand-800 shadow-card transition-all duration-300 hover:-translate-y-0.5 hover:border-accent-400 hover:bg-accent-50 hover:text-accent-700 hover:shadow-glow"
+              >
+                {t}
+              </motion.span>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* CTA band */}
       <div className="mt-20 flex flex-col items-center justify-between gap-6 rounded-3xl bg-gradient-to-r from-brand-700 to-brand-900 p-8 text-white sm:flex-row sm:p-12">
         <div>
