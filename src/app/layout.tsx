@@ -20,6 +20,9 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://krishaan-agro.vercel.app"
+  ),
   title: "Krishaan Agro — Smart Farming, Urban Gardening & Agri Solutions",
   description:
     "Krishaan Agro empowers farmers with smart farming, urban gardening, contract farming, agri machinery, soil testing and market linkage. Shop premium agri products with COD & WhatsApp ordering.",
