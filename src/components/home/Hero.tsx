@@ -32,10 +32,6 @@ const heroSlides = [
     alt: "Farmer in golden field at sunset",
   },
   {
-    src: "https://images.unsplash.com/photo-1592419044706-39796d40f98c?auto=format&fit=crop&w=1400&q=80",
-    alt: "Modern smart farming",
-  },
-  {
     src: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1400&q=80",
     alt: "Sustainable green agriculture",
   },
@@ -47,8 +43,6 @@ const heroSlides = [
 
 const collageImg =
   "https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=700&q=80";
-const float1 =
-  "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=400&q=80";
 
 const avatars = [
   "photo-1568602471122-7832951cc4c5",
@@ -391,24 +385,23 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Floating chip card top-left */}
+          {/* Floating live-farm video card top-left */}
           <motion.div
             animate={{ y: [0, -14, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute left-0 top-8 flex items-center gap-3 rounded-2xl bg-white/90 p-2.5 shadow-glow backdrop-blur sm:left-2"
+            className="absolute -left-3 top-6 w-28 sm:left-0 sm:w-32"
           >
-            <span className="relative h-11 w-11 overflow-hidden rounded-xl">
-              <Image
-                src={float1}
-                alt="Organic inputs"
-                fill
-                className="object-cover"
-                sizes="44px"
+            {/* native aspect + object-contain — pura video frame dikhta hai, kahin se nahi katta */}
+            <div className="relative aspect-[360/797] overflow-hidden rounded-2xl bg-brand-950 shadow-glow ring-4 ring-cream">
+              <video
+                src="/hero/hero-video.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                className="absolute inset-0 h-full w-full object-contain"
               />
-            </span>
-            <div className="pr-1">
-              <p className="text-xs font-bold text-brand-900">Organic Inputs</p>
-              <p className="text-[11px] text-brand-500">100% natural</p>
             </div>
           </motion.div>
 

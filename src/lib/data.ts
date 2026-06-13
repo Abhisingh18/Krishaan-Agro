@@ -547,7 +547,7 @@ export const categories: Category[] = [
       {
         name: "Crop-Specific Advisory",
         desc: "Aapki mitti ke liye kaunsi fasal best hai — expert agronomist ki personalized salah.",
-        image: "/trust/t7.jpg",
+        image: img("photo-1500382017468-9049fed747ef"),
       },
     ],
   },
@@ -929,6 +929,159 @@ export const events: AgroEvent[] = [
     category: "Horticulture & Floriculture",
     location: "Patna, Bihar",
     image: img("photo-1511578314322-379afb476865"),
+  },
+];
+
+/* ------------------------------ OPPORTUNITIES ------------------------------ */
+
+export type Opportunity = {
+  slug: string;
+  title: string;
+  org: string;
+  category: string;
+  /** short timeline / deadline label shown on the card */
+  meta: string;
+  /** poster image (used in the floating marquee + detail hero) */
+  image: string;
+  tagline: string;
+  body: string[];
+  pointsTitle?: string;
+  points?: string[];
+  whyTitle?: string;
+  why?: string[];
+  /** images shown one below another (line by line) on the detail page */
+  gallery: string[];
+  /** external apply / info link */
+  link?: string;
+};
+
+export const opportunities: Opportunity[] = [
+  {
+    slug: "startup-bihar-speed-that-builds-confidence",
+    title: "Speed that Builds Confidence. Results that Build Trust.",
+    org: "Startup Bihar · Department of Industries, Govt. of Bihar",
+    category: "Startup Selection",
+    meta: "April 2026 cycle · 42 days",
+    image: "/opportunities/startup-bihar.jpg",
+    tagline:
+      "Startup Bihar ne April 2026 ki applications ka poora selection process — preliminary screening se final selection tak — sirf 42 din me complete kiya.",
+    body: [
+      "Startup Bihar is happy to share that we completed the entire startup selection process — from preliminary screening to final selection — for applications received in April 2026 in just 42 days.",
+      "This milestone reflects our commitment to creating a founder-first, transparent, and efficient startup ecosystem where promising entrepreneurs receive timely support and opportunities to grow.",
+      "A sincere thanks to all experts, committee members, ecosystem partners, and the team whose dedication made this fast, founder-first process possible.",
+    ],
+    pointsTitle: "The journey included",
+    points: [
+      "Preliminary Screening of applications",
+      "Detailed Expert Evaluation",
+      "Founder Pitching Sessions",
+      "Final Selection by the Preliminary Scrutiny Committee (PSC)",
+    ],
+    whyTitle: "Why does speed matter?",
+    why: [
+      "Faster decision-making enables startups to move quickly from idea to execution.",
+      "Timely support builds founder confidence and ecosystem trust.",
+      "Reduced processing timelines help maintain startup momentum.",
+      "Efficient governance strengthens Bihar's position as an emerging innovation hub.",
+    ],
+    gallery: ["/opportunities/startup-bihar.jpg"],
+  },
+  {
+    slug: "sabour-agri-incubators-sabagris",
+    title: "Sabour Agri Incubators (SABAGRIS)",
+    org: "Sabour Agricultural University, Bihar",
+    category: "Agri Startup Incubation",
+    meta: "Last date to apply: 7 July 2026",
+    image: "/opportunities/sabagris.jpg",
+    tagline:
+      "Idea, pre-seed aur seed stage agri-startups & students ke liye incubation support — funding, mentorship, validation aur market linkages ke saath.",
+    body: [
+      "SABAGRIS supports agri-startups with funding, mentorship, validation and market linkages through a 30-day hybrid capacity-building programme.",
+      "Expert mentorship from industry & academia, business model development, startup strategy aur technology validation — sab kuch ek hi programme me.",
+    ],
+    pointsTitle: "Programmes available",
+    points: [
+      "Startup Agri-Business Incubation Programme (SAIP) — ₹25L",
+      "Agripreneurship Orientation Programme (AOP) — ₹5L",
+      "Student Orientation Programme (SOP) — ₹4L",
+    ],
+    whyTitle: "Programme highlights",
+    why: [
+      "30-Day Hybrid Capacity Building Programme",
+      "Expert Mentorship from Industry & Academia",
+      "Business Model Development & Startup Strategy",
+      "Technology Validation & Product Refinement",
+    ],
+    gallery: ["/opportunities/sabagris.jpg"],
+  },
+  {
+    slug: "iatr-rawe-aia-2026",
+    title: "IATR — RAWE & AIA 2026",
+    org: "Institute of Agriculture Training and Research, Dehradun",
+    category: "Internship & Training",
+    meta: "Registration open now",
+    image: "/opportunities/iatr-rawe-aia.jpg",
+    tagline:
+      "Rural Agricultural Work Experience (RAWE) aur Agro-Industrial Attachment (AIA) — practical exposure, skill development aur rural connect ke saath.",
+    body: [
+      "RAWE & AIA 2026 ek skilling, entrepreneurship aur research focused programme hai jo students ko real, on-ground agricultural experience deta hai.",
+      "Practical knowledge, communication & extension skills, confidence aur entrepreneurship foundation — career ko aage le jaane ke liye complete package.",
+    ],
+    pointsTitle: "Programme components",
+    points: [
+      "Rural Agricultural Work Experience (RAWE)",
+      "Agro-Industrial Attachment (AIA)",
+      "Plant Clinic — crop & pest diagnosis",
+      "Unit Attachment — KVKs, Research Stations & Agri Institutions",
+    ],
+    whyTitle: "What you will gain",
+    why: [
+      "Practical knowledge & real-field experience",
+      "Improved communication & extension skills",
+      "Understanding of rural challenges & solutions",
+      "Foundation for entrepreneurship & startups",
+    ],
+    gallery: ["/opportunities/iatr-rawe-aia.jpg"],
+    link: "https://www.iatr.in",
+  },
+  {
+    slug: "stpi-smartagri-open-challenge",
+    title: "STPI SmartAgri — Open Challenge Program 1.0",
+    org: "STPI SmartAgri CoE, Bhilai · Ministry of Electronics & IT",
+    category: "AgriTech Challenge",
+    meta: "Deadline: 15 July 2026",
+    image: "/opportunities/stpi-smartagri.jpg",
+    tagline:
+      "AgriTech startups ke liye open challenge — apni innovation prove karein aur Rs. 35 Lakh tak ka support jeetein.",
+    body: [
+      "Pitch. Prove. Prevail — agar aap AgriTech domain me impact create karne ke liye taiyaar ho, toh STPI SmartAgri CoE, Bhilai ke Open Challenge Program 1.0 me participate karein.",
+      "Winning startups ko Rs. 35 Lakh tak ka support milta hai — funding, mentorship aur ecosystem access ke saath.",
+    ],
+    gallery: ["/opportunities/stpi-smartagri.jpg"],
+    link: "https://sayuj.net/apply-contest/smartagri-ocp",
+  },
+  {
+    slug: "icrisat-global-research-opportunities",
+    title: "ICRISAT Global Research Opportunities 2026–27",
+    org: "ICRISAT, Patancheru, Telangana",
+    category: "Research Opportunity",
+    meta: "Applications open for 2026–27 intakes",
+    image: "/opportunities/icrisat-2026.jpg",
+    tagline:
+      "Global agri research me career banayein — research internships, Master's, PhD aur fellowship programmes ke saath sustainable, food-secure future shape karein.",
+    body: [
+      "ICRISAT global research opportunities provide hands-on research experience with world-class experts across science, impact, inclusion and collaboration.",
+      "Research focus areas include crops & systems (millets, sorghum, chickpea, pigeonpea, groundnut), climate resilience, genetic improvement, digital agriculture & AI, and nutrition, markets & policy.",
+    ],
+    pointsTitle: "Opportunities available",
+    points: [
+      "Research Internships",
+      "Master's Programs",
+      "PhD Programs",
+      "Fellowship Programs",
+    ],
+    gallery: ["/opportunities/icrisat-2026.jpg"],
+    link: "https://www.icrisat.org/careers",
   },
 ];
 
