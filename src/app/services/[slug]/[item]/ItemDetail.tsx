@@ -40,7 +40,10 @@ export default function ItemDetail({
             fill
             priority
             sizes="(max-width:1024px) 90vw, 45vw"
-            className={item.imageContain ? "object-contain" : "object-cover"}
+            className={cn(
+              item.imageContain ? "object-contain" : "object-cover",
+              item.imagePos
+            )}
           />
           <span
             className={cn(

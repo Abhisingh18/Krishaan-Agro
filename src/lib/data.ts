@@ -20,6 +20,8 @@ export type ServiceItem = {
   quoteText?: string;
   /** Show the hero image fully (object-contain) — for product/white-bg photos */
   imageContain?: boolean;
+  /** object-position class for the image (e.g. object-top so faces aren't cropped) */
+  imagePos?: string;
 };
 
 export type Category = {
@@ -182,6 +184,7 @@ export const categories: Category[] = [
         name: "Agri Advisory & Agronomy",
         desc: "Crop planning se yield optimization tak — expert agronomy advisory seedha khet par.",
         image: "/trust/t7.jpg",
+        imagePos: "object-top",
         highlights: [
           "Crop Planning & Agronomy Advisory",
           "Soil Health & Nutrient Management",
