@@ -560,12 +560,12 @@ export const categories: Category[] = [
       {
         name: "Agri-Business & Marketing",
         desc: "Market linkage, procurement aur agri-trade operations ki practical learning.",
-        image: img("photo-1454165804606-c3d57bc86b40"),
+        image: "/internship/agri-marketing.jpg",
       },
       {
         name: "Soil Lab Internship",
         desc: "Soil testing lab mein NPK, pH analysis aur report making ki training.",
-        image: img("photo-1582719478250-c89cae4dc85b"),
+        image: "/internship/soil-lab-test.jpg",
       },
       {
         name: "Field Research & Data",
@@ -585,8 +585,32 @@ export const categories: Category[] = [
     items: [
       {
         name: "Soil Sample Collection",
-        desc: "Sahi tarike se sample lena hi aadhi jaanch hai — hamari team khet se scientific sampling karti hai.",
-        image: "/smart-farming/sf1.jpg",
+        desc: "🌱 Soil Sampling (Mitti Ka Namuna Sangrahan) ek scientific technique hai jiske madhyam se khet ki mitti ka sahi namuna lekar uski fertility, nutrient status aur soil health ka assessment kiya jata hai. Sahi soil sample hi accurate soil testing aur fertilizer recommendation ka aadhar hota hai.",
+        image: "/soil-testing/sampling/s1.jpg",
+        highlights: [
+          "Khet ke 8–10 alag-alag sthanon se mitti ka sample collect karein.",
+          "Sample hamesha \"V\" shape ka gaddha khodkar lein.",
+          "Samanya faslon ke liye 0–15 cm aur bagwani faslon ke liye 0–30 cm gahrai se mitti lein.",
+          "Sabhi samples ko achhi tarah milakar ek representative composite sample tayyar karein.",
+          "Lagbhag 500 gram mitti laboratory testing ke liye paryapt hoti hai.",
+          "Medh, nali, ped ke niche, khaad ke dher aur pani jama hone wale sthanon se sample na lein.",
+          "Sample ko saaf plastic bag me bhar kar proper labeling karein.",
+          "Soil testing se pH, Organic Carbon, NPK aur micronutrients ki jankari milti hai.",
+        ],
+        usp: [
+          "🌾 Balanced Fertilizer Application",
+          "📈 Higher Crop Yield & Quality",
+          "💰 Reduced Fertilizer Cost",
+          "🌱 Improved Soil Fertility",
+          "♻️ Sustainable Farming Practices",
+          "🚜 Scientific Crop Planning",
+        ],
+        gallery: [
+          "/soil-testing/sampling/s1.jpg",
+          "/soil-testing/sampling/s2.jpg",
+          "/soil-testing/sampling/s3.jpg",
+          "/soil-testing/sampling/s4.jpg",
+        ],
       },
       {
         name: "NPK & Micro-Nutrient Analysis",
