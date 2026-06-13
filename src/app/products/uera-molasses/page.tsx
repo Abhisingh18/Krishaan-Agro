@@ -3,9 +3,17 @@ import PageHeader from "@/components/ui/PageHeader";
 import UeraMolassesDetail from "./UeraMolassesDetail";
 
 export const metadata: Metadata = {
-  title: "Krishaan Uera Molasses — Natural Cattle Nutrition | Krishaan Agro",
+  title: "Krishaan Uera Molasses — Natural Cattle Nutrition",
   description:
     "Krishaan Uera Molasses — dudh utpadan badhane ka prakritik aur asardar solution. Milk yield, base fat & SNF, immunity aur animal health improve kare.",
+  alternates: { canonical: "/products/uera-molasses" },
+  openGraph: {
+    title: "Krishaan Uera Molasses — Natural Cattle Nutrition",
+    description:
+      "Natural cattle nutrition that boosts milk yield, fat & SNF, immunity and animal health.",
+    url: "/products/uera-molasses",
+    type: "website",
+  },
 };
 
 export default function UeraMolassesPage() {

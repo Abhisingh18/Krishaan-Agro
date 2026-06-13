@@ -4,6 +4,8 @@ import { categories } from "@/lib/data";
 import PageHeader from "@/components/ui/PageHeader";
 import ServiceItems from "./ServiceItems";
 import SoilGuide from "./SoilGuide";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbSchema, serviceSchema } from "@/lib/seo";
 
 export function generateStaticParams() {
   return categories.map((c) => ({ slug: c.slug }));
@@ -17,9 +19,18 @@ export async function generateMetadata({
   const { slug } = await params;
   const cat = categories.find((c) => c.slug === slug);
   if (!cat) return { title: "Service not found" };
+  const path = `/services/${cat.slug}`;
   return {
-    title: `${cat.title} — Krishaan Agro`,
+    title: cat.title,
     description: cat.description,
+    alternates: { canonical: path },
+    openGraph: {
+      title: `${cat.title} — Krishaan Agro`,
+      description: cat.description,
+      url: path,
+      type: "website",
+      images: [{ url: cat.image, alt: cat.title }],
+    },
   };
 }
 
@@ -32,8 +43,20 @@ export default async function ServicePage({
   const cat = categories.find((c) => c.slug === slug);
   if (!cat) notFound();
 
+  const path = `/services/${cat.slug}`;
+
   return (
     <>
+      <JsonLd
+        data={[
+          serviceSchema(cat, path),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/#services" },
+            { name: cat.title, path },
+          ]),
+        ]}
+      />
       <PageHeader
         title={cat.title}
         subtitle={cat.description}

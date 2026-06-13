@@ -4,9 +4,17 @@ import Stats from "@/components/home/Stats";
 import AwardsGallery from "./AwardsGallery";
 
 export const metadata: Metadata = {
-  title: "Awards & Gallery — Krishaan Agro",
+  title: "Awards & Gallery",
   description:
     "Awards, recognitions and memorable moments from Krishaan Agro's journey of empowering Indian agriculture.",
+  alternates: { canonical: "/awards" },
+  openGraph: {
+    title: "Awards & Gallery — Krishaan Agro",
+    description:
+      "Recognitions and milestones from Krishaan Agro's journey of empowering Indian agriculture.",
+    url: "/awards",
+    type: "website",
+  },
 };
 
 export default function AwardsPage() {

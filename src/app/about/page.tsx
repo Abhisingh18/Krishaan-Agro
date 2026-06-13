@@ -11,9 +11,17 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import { Sprout, Target, Eye, Award, Leaf } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Us — Krishaan Agro",
+  title: "About Us",
   description:
     "Learn about Krishaan Agro's mission to empower Indian farmers with smart farming, urban gardening and assured markets.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About Krishaan Agro",
+    description:
+      "Our mission to make Indian agriculture profitable, sustainable and respected.",
+    url: "/about",
+    type: "website",
+  },
 };
 
 const values = [

@@ -6,6 +6,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
 import CartDrawer from "@/components/cart/CartDrawer";
+import JsonLd from "@/components/JsonLd";
+import { SITE_URL, organizationSchema, websiteSchema } from "@/lib/seo";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,14 +22,22 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://krishaanagro.com"
-  ),
-  title: "Krishaan Agro — Smart Farming, Urban Gardening & Agri Solutions",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default:
+      "Krishaan Agro — Smart Farming, Urban Gardening & Agri Solutions",
+    template: "%s | Krishaan Agro",
+  },
   description:
     "Krishaan Agro empowers farmers with smart farming, urban gardening, contract farming, agri machinery, soil testing and market linkage. Shop premium agri products with COD & WhatsApp ordering.",
+  applicationName: "Krishaan Agro",
+  authors: [{ name: "Krishaan Agro" }],
+  creator: "Krishaan Agro",
+  publisher: "Krishaan Agro",
+  category: "agriculture",
   keywords: [
     "Krishaan Agro",
+    "Krishaan Agro Aurangabad Bihar",
     "agriculture",
     "smart farming",
     "urban gardening",
@@ -36,12 +46,51 @@ export const metadata: Metadata = {
     "agri machinery",
     "soil testing",
     "organic products",
+    "cattle feed",
+    "agri startup Bihar",
   ],
+  alternates: {
+    canonical: "/",
+  },
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: SITE_URL,
+    siteName: "Krishaan Agro",
     title: "Krishaan Agro — Growing India, Together",
     description:
       "Smart farming, urban gardening, contract farming & premium agri products.",
-    type: "website",
+    images: [
+      {
+        url: "/logo.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Krishaan Agro",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Krishaan Agro — Growing India, Together",
+    description:
+      "Smart farming, urban gardening, contract farming & premium agri products.",
+    images: ["/logo.jpeg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 };
 
@@ -53,6 +102,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${fraunces.variable}`}>
       <body>
+        <JsonLd data={[organizationSchema(), websiteSchema()]} />
         <CartProvider>
           <Navbar />
           <main>{children}</main>

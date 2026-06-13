@@ -6,9 +6,17 @@ import ContactForm from "./ContactForm";
 import { SITE, whatsappLink } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Contact Us — Krishaan Agro",
+  title: "Contact Us",
   description:
-    "Get in touch with Krishaan Agro for products, services, partnerships or a free consultation.",
+    "Get in touch with Krishaan Agro for products, services, partnerships or a free consultation. Based in Aurangabad, Bihar.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact Krishaan Agro",
+    description:
+      "Reach Krishaan Agro for products, services, partnerships or a free consultation.",
+    url: "/contact",
+    type: "website",
+  },
 };
 
 const info = [
