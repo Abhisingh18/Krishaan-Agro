@@ -34,7 +34,29 @@ export default function AwardsGallery() {
 
   return (
     <section className="container-x py-16">
-      {/* masonry: natural aspect ratio — no cropping, no repeats */}
+      {/* video on top */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.5 }}
+        className="mx-auto mb-14 max-w-4xl"
+      >
+        <div className="overflow-hidden rounded-[2rem] bg-brand-950 shadow-glow ring-1 ring-white/20">
+          <video
+            src="/awards/awards-video.mp4"
+            controls
+            playsInline
+            preload="metadata"
+            className="h-auto w-full"
+          />
+        </div>
+        <p className="mt-4 text-center text-sm font-semibold text-brand-600">
+          🏆 Krishi Jagran — Millionaire Farmer of India 2024
+        </p>
+      </motion.div>
+
+      {/* photos below — masonry: natural aspect ratio, no cropping, no repeats */}
       <div className="columns-2 gap-4 md:columns-3 lg:columns-4">
         {photos.map((src, i) => (
           <motion.button
