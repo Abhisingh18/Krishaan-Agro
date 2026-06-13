@@ -163,7 +163,7 @@ export default function WhyChoose() {
                   className={`absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-gradient-to-r ${f.gradient} transition-transform duration-500 group-hover:scale-x-100`}
                 />
                 {/* ghost number */}
-                <span className="pointer-events-none absolute -right-1 -top-3 font-display text-6xl font-bold text-brand-50 transition-colors group-hover:text-brand-100/70">
+                <span className="pointer-events-none absolute -right-1 -top-3 font-display text-6xl font-bold text-brand-200 transition-colors group-hover:text-brand-300">
                   0{i + 1}
                 </span>
 
