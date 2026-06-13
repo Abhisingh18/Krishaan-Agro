@@ -1,8 +1,7 @@
 import type { MetadataRoute } from "next";
 import { categories, products } from "@/lib/data";
 
-// 👉 Domain milte hi yahan final URL daal dena (e.g. https://krishaanagro.in)
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://krishaan-agro.vercel.app";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://krishaanagro.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = ["", "/shop", "/awards", "/about", "/contact"].map(

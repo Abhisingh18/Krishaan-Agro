@@ -21,7 +21,7 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://krishaan-agro.vercel.app"
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://krishaanagro.com"
   ),
   title: "Krishaan Agro — Smart Farming, Urban Gardening & Agri Solutions",
   description:
