@@ -385,22 +385,21 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Floating live-farm video card top-left */}
+          {/* Floating live-farm video card top-left — landscape, black bars cropped out */}
           <motion.div
             animate={{ y: [0, -14, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -left-3 top-6 w-28 sm:left-0 sm:w-32"
+            className="absolute -left-4 top-6 w-44 sm:-left-2 sm:w-52"
           >
-            {/* native aspect + object-contain — pura video frame dikhta hai, kahin se nahi katta */}
-            <div className="relative aspect-[360/797] overflow-hidden rounded-2xl bg-brand-950 shadow-glow ring-4 ring-cream">
+            <div className="relative aspect-[1524/700] w-full overflow-hidden rounded-2xl bg-brand-950 shadow-glow ring-4 ring-cream">
               <video
-                src="/hero/hero-video.mp4"
+                src="/hero/hero-video-landscape.mp4"
                 autoPlay
                 muted
                 loop
                 playsInline
                 preload="metadata"
-                className="absolute inset-0 h-full w-full object-contain"
+                className="absolute inset-0 h-full w-full object-cover"
               />
             </div>
           </motion.div>
