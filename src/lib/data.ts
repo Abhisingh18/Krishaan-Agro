@@ -342,12 +342,12 @@ export const categories: Category[] = [
       {
         name: "Hydroponic Farm Setup",
         desc: "Complete soil-less farm systems — NFT channels, grow towers, nutrient dosing — installed, commissioned aur training ke saath.",
-        image: "/smart-farming/hydroponic/hy1.jpg",
+        image: "/smart-farming/hydroponic-setup/hs1.jpg",
         gallery: [
-          "/smart-farming/hydroponic/hy1.jpg",
-          "/smart-farming/hydroponic/hy2.jpg",
-          "/smart-farming/hydroponic/hy3.jpg",
-          "/smart-farming/hydroponic/hy4.jpg",
+          "/smart-farming/hydroponic-setup/hs1.jpg",
+          "/smart-farming/hydroponic-setup/hs2.jpg",
+          "/smart-farming/hydroponic-setup/hs3.jpg",
+          "/smart-farming/hydroponic-setup/hs4.jpg",
         ],
       },
       {
