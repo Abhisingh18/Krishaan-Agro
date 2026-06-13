@@ -873,27 +873,31 @@ export const team: {
   role: string;
   image: string;
   linkedin?: string;
+  /** object-position class for the photo (default object-top) */
+  imagePos?: string;
 }[] = [
   {
     name: "Abhishek Kumar",
     role: "Founder & CEO",
     image: "/founder.jpg",
     linkedin: "https://www.linkedin.com/in/abhishek-kumar-88b352265/",
+    imagePos: "object-[50%_60%]",
   },
   {
     name: "Ujjawal Kumar",
     role: "Co-Founder",
     image: "/team-ujjawal.jpg",
+    imagePos: "object-[50%_30%]",
   },
   {
     name: "Pawan Kumar",
     role: "CMO",
-    image: "/team-pawan.jpg",
+    image: "/team-pawan-new.jpg",
   },
   {
     name: "Deepak Kumar",
     role: "COO",
-    image: "/team-deepak.jpg",
+    image: "/team-deepak-new.jpg",
   },
 ];
 

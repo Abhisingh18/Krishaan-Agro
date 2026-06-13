@@ -34,7 +34,7 @@ export default function Team() {
                 alt={m.name}
                 fill
                 sizes="(max-width:1024px) 50vw, 25vw"
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                className={`object-cover ${m.imagePos ?? "object-top"} transition-transform duration-700 group-hover:scale-110`}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-950/80 to-transparent opacity-0 transition group-hover:opacity-100" />
               <div className="absolute inset-x-0 bottom-4 flex justify-center gap-2 opacity-0 transition group-hover:opacity-100">

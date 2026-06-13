@@ -18,8 +18,8 @@ export default function Home() {
       <Services />
       <Stats />
       <WhyChoose />
-      <Events />
       <UeraMolasses />
+      <Events />
       <Opportunities />
       <Achievements />
       <Testimonials />
