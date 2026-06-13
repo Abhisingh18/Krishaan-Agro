@@ -172,6 +172,42 @@ export default function ItemDetail({
         </div>
       )}
 
+      {/* project photo gallery */}
+      {item.gallery && item.gallery.length > 0 && (
+        <div className="mt-20">
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="eyebrow">
+              <span className="h-1.5 w-1.5 rounded-full bg-accent-500" />
+              Gallery
+            </span>
+            <h2 className="mt-4 font-display text-3xl font-semibold text-brand-950 sm:text-4xl">
+              📸 {item.name} <span className="gradient-text">Photos</span>
+            </h2>
+          </div>
+          <div className="mt-10 columns-1 gap-4 sm:columns-2 lg:columns-3">
+            {item.gallery.map((src, i) => (
+              <motion.div
+                key={src}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.4, delay: (i % 3) * 0.07 }}
+                className="mb-4 break-inside-avoid overflow-hidden rounded-2xl bg-brand-100 shadow-card transition-all duration-500 hover:-translate-y-1 hover:shadow-glow"
+              >
+                {/* natural aspect — pura photo dikhta hai, koi crop nahi */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={src}
+                  alt={`${item.name} ${i + 1}`}
+                  loading="lazy"
+                  className="h-auto w-full"
+                />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* CTA band */}
       <div className="mt-20 flex flex-col items-center justify-between gap-6 rounded-3xl bg-gradient-to-r from-brand-700 to-brand-900 p-8 text-white sm:flex-row sm:p-12">
         <div>

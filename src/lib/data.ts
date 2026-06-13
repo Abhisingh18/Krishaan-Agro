@@ -13,6 +13,8 @@ export type ServiceItem = {
   /** Optional chip-cloud section on the detail page (e.g. equipment list) */
   tagsTitle?: string;
   tags?: string[];
+  /** Real project photos shown as a gallery on the sub-service detail page */
+  gallery?: string[];
 };
 
 export type Category = {
@@ -241,32 +243,76 @@ export const categories: Category[] = [
       {
         name: "Rooftop / Terrace Gardening",
         desc: "Khaali chhat ko banao productive garden — sabzi, phal aur phool, sab apni terrace par.",
-        image: "/urban/u5.jpg",
+        image: "/urban/rooftop/r1.jpg",
+        gallery: [
+          "/urban/rooftop/r1.jpg",
+          "/urban/rooftop/r2.jpg",
+          "/urban/rooftop/r3.jpg",
+          "/urban/rooftop/r4.jpg",
+          "/urban/rooftop/r5.jpg",
+          "/urban/rooftop/r6.jpg",
+        ],
       },
       {
         name: "Vertical Gardening",
         desc: "Lush living walls jo jagah bachayein aur ghar ko thanda rakhein — style ke saath.",
-        image: "/urban/u4.jpg",
+        image: "/urban/vertical/v1.jpg",
+        gallery: [
+          "/urban/vertical/v1.jpg",
+          "/urban/vertical/v2.jpg",
+          "/urban/vertical/v3.jpg",
+          "/urban/vertical/v4.jpg",
+          "/urban/vertical/v5.jpg",
+          "/urban/vertical/v6.jpg",
+        ],
       },
       {
         name: "Windowsill Gardening",
         desc: "Balcony aur khidki ke liye compact pots setup — herbs, phool aur positive vibes.",
-        image: "/urban/u1.jpg",
+        image: "/urban/windowsill/w1.jpg",
+        gallery: [
+          "/urban/windowsill/w1.jpg",
+          "/urban/windowsill/w2.jpg",
+          "/urban/windowsill/w3.jpg",
+          "/urban/windowsill/w4.jpg",
+          "/urban/windowsill/w5.jpg",
+        ],
       },
       {
         name: "Park Gardening",
         desc: "Communities ke liye raised beds, landscaping aur green-space design.",
-        image: "/urban/u6.jpg",
+        image: "/urban/park-lawn/p1.jpg",
+        gallery: [
+          "/urban/park-lawn/p1.jpg",
+          "/urban/park-lawn/p2.jpg",
+          "/urban/park-lawn/p3.jpg",
+          "/urban/park-lawn/p4.jpg",
+          "/urban/park-lawn/p5.jpg",
+          "/urban/park-lawn/p6.jpg",
+        ],
       },
       {
         name: "Lawn Gardening",
         desc: "Designer lawns with seating — design, setup aur maintenance hamari zimmedari.",
-        image: "/urban/u2.jpg",
+        image: "/urban/park-lawn/p1.jpg",
+        gallery: [
+          "/urban/park-lawn/p1.jpg",
+          "/urban/park-lawn/p2.jpg",
+          "/urban/park-lawn/p3.jpg",
+          "/urban/park-lawn/p4.jpg",
+          "/urban/park-lawn/p5.jpg",
+          "/urban/park-lawn/p6.jpg",
+        ],
       },
       {
         name: "Interior Designing",
         desc: "Biophilic indoor greenery jo har space ko premium bana de.",
-        image: img("photo-1616046229478-9901c5536a45"),
+        image: "/urban/interior/in1.jpg",
+        gallery: [
+          "/urban/interior/in1.jpg",
+          "/urban/interior/in2.jpg",
+          "/urban/interior/in3.jpg",
+        ],
       },
     ],
     gallery: Array.from({ length: 6 }, (_, i) => `/urban/u${i + 1}.jpg`),
@@ -285,17 +331,35 @@ export const categories: Category[] = [
       {
         name: "Polyhouse Development / Setup",
         desc: "Climate-controlled polyhouse design aur turnkey installation — structure se cultivation tak, sab hamari team karti hai.",
-        image: "/smart-farming/sf14.jpg",
+        image: "/smart-farming/polyhouse/ph1.jpg",
+        gallery: [
+          "/smart-farming/polyhouse/ph1.jpg",
+          "/smart-farming/polyhouse/ph2.jpg",
+          "/smart-farming/polyhouse/ph3.jpg",
+          "/smart-farming/polyhouse/ph4.jpg",
+        ],
       },
       {
         name: "Hydroponic Farm Setup",
         desc: "Complete soil-less farm systems — NFT channels, grow towers, nutrient dosing — installed, commissioned aur training ke saath.",
-        image: "/smart-farming/sf18.jpg",
+        image: "/smart-farming/hydroponic/hy1.jpg",
+        gallery: [
+          "/smart-farming/hydroponic/hy1.jpg",
+          "/smart-farming/hydroponic/hy2.jpg",
+          "/smart-farming/hydroponic/hy3.jpg",
+          "/smart-farming/hydroponic/hy4.jpg",
+        ],
       },
       {
         name: "Hydroponic Farming",
         desc: "Hamare operational hydroponic farms mein year-round premium leafy greens — 90% kam paani, zero soil, double speed growth.",
-        image: "/smart-farming/sf25.jpg",
+        image: "/smart-farming/hydroponic/hy1.jpg",
+        gallery: [
+          "/smart-farming/hydroponic/hy1.jpg",
+          "/smart-farming/hydroponic/hy2.jpg",
+          "/smart-farming/hydroponic/hy3.jpg",
+          "/smart-farming/hydroponic/hy4.jpg",
+        ],
       },
       {
         name: "Multilayer Farming",
