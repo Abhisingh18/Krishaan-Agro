@@ -78,7 +78,7 @@ export const categories: Category[] = [
       {
         name: "B2C Service",
         desc: "Fresh, traceable produce and inputs delivered directly to consumers.",
-        image: img("photo-1610348725531-843dff563e2c"),
+        image: img("photo-1635341083777-5f93a755e916"),
         highlights: [
           "AI-Powered Crop Advisory",
           "Smart Farming Solutions",
@@ -112,7 +112,7 @@ export const categories: Category[] = [
       {
         name: "B2B Trade",
         desc: "Bulk sourcing & supply between farms, mandis, retailers and exporters.",
-        image: img("photo-1586201375761-83865001e31c"),
+        image: img("photo-1774946103680-3d34a461a581"),
         highlights: [
           "Agribusiness Consulting & Strategy",
           "Agri Startup Incubation Support",
@@ -146,7 +146,7 @@ export const categories: Category[] = [
       {
         name: "Agroranto™",
         desc: "Farm Machinery & Equipment Solutions — tractor se drone tak, rent karo ya book karo, Uber jaise aasaan.",
-        image: img("photo-1592805144716-feeccccef5ac"),
+        image: img("photo-1615811361523-6bd03d7748e7"),
         highlights: [
           "Tractor Rental & Booking Services",
           "Agricultural Implements Supply",
@@ -201,7 +201,7 @@ export const categories: Category[] = [
       {
         name: "Farm Advisory",
         desc: "End-to-end farm management — planning, mechanization aur post-harvest tak ka complete saath.",
-        image: img("photo-1592419044706-39796d40f98c"),
+        image: img("photo-1741874299706-2b8e16839aaa"),
         highlights: [
           "End-to-End Farm Management",
           "Farm Development & Expansion Planning",
@@ -218,7 +218,7 @@ export const categories: Category[] = [
       {
         name: "Agri Entrepreneurship Advisory",
         desc: "Agribusiness shuru karna hai? DPR se funding tak — end-to-end agripreneur mentorship.",
-        image: img("photo-1454165804606-c3d57bc86b40"),
+        image: img("photo-1758524052101-db20bc203b41"),
         highlights: [
           "Agribusiness Consulting & Strategy",
           "Startup Registration & Compliance Support",
@@ -235,7 +235,7 @@ export const categories: Category[] = [
       {
         name: "Market Linkage",
         desc: "Direct access to buyers, mandis and premium markets for better prices.",
-        image: img("photo-1577705998148-6da4f3963bc8"),
+        image: img("photo-1559855604-f11cd5d385eb"),
       },
     ],
   },
@@ -655,6 +655,69 @@ export const categories: Category[] = [
 /* --------------------------------- PRODUCTS --------------------------------- */
 
 export const products: Product[] = [
+  {
+    id: "pm1",
+    slug: "multi-nozzle-trolley-sprayer",
+    name: "Manual Multi-Nozzle Trolley Sprayer",
+    category: "Agri Machinery",
+    price: 0,
+    unit: "per unit",
+    rating: 4.9,
+    badge: "Patented",
+    image: "/products/trolley-sprayer.jpeg",
+    short:
+      "Solar-powered manual multi-nozzle agricultural trolley sprayer — smarter spraying, higher yields.",
+    description:
+      "Krishaan Agro's patented manual multi-nozzle agricultural trolley sprayer with spraying & solar setup. A multi-nozzle boom gives wide, uniform coverage while the solar-powered, battery-backed pump saves time, water and effort. Built on a rust-proof frame for long-lasting durability — ideal for wheat, rice, sugarcane, cotton, vegetables, pulses, fruits and plantations.",
+    highlights: [
+      "Multi-nozzle boom — wide, uniform spray",
+      "Solar powered with battery-backed pump",
+      "Rust-proof, durable & leak-proof tank",
+      "Ideal for all crops · 6 months warranty",
+    ],
+  },
+  {
+    id: "pm2",
+    slug: "solar-multilayer-insect-trap",
+    name: "Solar Multi-Layer Insect Trap",
+    category: "Agri Machinery",
+    price: 0,
+    unit: "per unit",
+    rating: 4.8,
+    badge: "New",
+    image: "/products/solar-insect-trap.jpeg",
+    short:
+      "100% solar-powered multi-layer insect trap — smart, chemical-free crop protection.",
+    description:
+      "The KA Solar Insect Trap is a 100% solar-powered, multi-layer (3-tray) insect trap that captures more insects for maximum protection. Eco-friendly and chemical-free, it is safe for crops and the environment, durable and low-maintenance — stronger crops, higher yields. Effective for cotton, chilli, tomato, okra, brinjal and more.",
+    highlights: [
+      "100% solar powered — saves power & money",
+      "3-tray multi-layer design captures more insects",
+      "Eco-friendly & chemical-free — safe for crops",
+      "Durable & low maintenance",
+    ],
+  },
+  {
+    id: "p0",
+    slug: "uera-molasses",
+    name: "Krishaan Uera Molasses",
+    category: "Cattle Feed",
+    price: 0,
+    unit: "per block",
+    rating: 4.9,
+    badge: "Flagship",
+    image: "/products/uera-molasses-1.png",
+    short:
+      "Doodh utpadan badhane ka prakritik aur asardar solution — natural cattle nutrition.",
+    description:
+      "Krishaan Uera Molasses is a natural, ready-to-lick energy and nutrition block for cattle. It boosts milk yield, base fat & SNF, improves immunity and animal health, and gives a steady source of natural energy — doodh badhao, munafa badhao, pashu ko swasth banao.",
+    highlights: [
+      "Doodh utpadan badhaye (milk yield boost)",
+      "Base fat & SNF improve kare",
+      "Pashu swasthya & immunity strong kare",
+      "100% prakritik energy ka source",
+    ],
+  },
   {
     id: "p1",
     slug: "multi-nutrient-cattle-feed",
