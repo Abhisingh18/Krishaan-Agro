@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/shop",
     "/awards",
+    "/patents",
     "/about",
     "/contact",
     "/products/uera-molasses",
