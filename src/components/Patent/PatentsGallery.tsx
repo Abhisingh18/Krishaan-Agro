@@ -84,6 +84,32 @@ const patents: Patent[] = [
     granted: "11 Jun 2026",
     inventors: "Abhishek Kumar, Abhishek Bisht, Gokulprasanth Murugan",
   },
+  {
+    src: "/patents/design-uk-insect-light-trap.jpeg",
+    title: "Solar-Chargeable Multi-Layer Insect Light Trap",
+    invention:
+      "Solar-chargeable multi-layer insect light trap for pest control",
+    kind: "Design",
+    authority: "Intellectual Property Office, UK",
+    flag: "🇬🇧",
+    number: "6526245",
+    status: "Registered",
+    granted: "05 Jun 2026",
+    inventors: "Abhishek Kumar, Abhishek Bisht, Gokulprasanth Murugan",
+  },
+  {
+    src: "/patents/design-uk-bread-slicing-machine.jpeg",
+    title: "Adjustable Bread Slicing Machine",
+    invention:
+      "Adjustable bread slicing machine — hand-operated food preparation appliance",
+    kind: "Design",
+    authority: "Intellectual Property Office, UK",
+    flag: "🇬🇧",
+    number: "6526246",
+    status: "Registered",
+    granted: "05 Jun 2026",
+    inventors: "Abhishek Kumar, Abhishek Bisht, Gokulprasanth Murugan",
+  },
 ];
 
 export default function PatentsGallery() {
