@@ -1255,45 +1255,65 @@ export const opportunities: Opportunity[] = [
 
 export const testimonials = [
   {
-    name: "Suresh Patel",
-    role: "Dairy Farmer, Gujarat",
-    image: img("photo-1568602471122-7832951cc4c5"),
+    name: "Ramdhari Yadav",
+    role: "Dairy Farmer, Khagaria, Bihar",
+    image: "/trust/farmer-ramdhari.jpg",
     quote:
-      "After switching to Krishaan Agro's cattle feed, my milk yield went up noticeably. Their team actually visits and guides us.",
+      "Is umar mein bhi unki team gaon tak aakar samjhati hai. Krishaan Agro ka pashu-aahaar shuru karne ke baad mere doodh ka utpaadan saaf badh gaya.",
     rating: 5,
   },
   {
-    name: "Meena Devi",
-    role: "Organic Grower, Rajasthan",
-    image: img("photo-1544723795-3fb6469f5b39"),
+    name: "Bhanwari Devi",
+    role: "Organic Farmer, Sikar, Rajasthan",
+    image: "/trust/farmer-bhanwari.jpg",
     quote:
-      "The soil testing and advisory completely changed how I farm. My input costs are down and my produce quality is up.",
+      "Chalis saal se isi mitti mein kheti kar rahi hoon. Unki soil testing aur salaah se kharcha kam hua aur fasal ki quality sabse acchi rahi.",
     rating: 5,
   },
   {
-    name: "Vikram Singh",
-    role: "Urban Gardener, Delhi",
-    image: img("photo-1506794778202-cad84cf45f1d"),
+    name: "Velusamy K.",
+    role: "Kitchen Gardener, Erode, Tamil Nadu",
+    image: "/trust/farmer-velusamy.jpg",
     quote:
-      "They turned my barren terrace into a green paradise. Professional design, great plants and amazing after-care.",
+      "They turned my empty backyard into a full vegetable garden. Healthy plants, honest guidance, and they keep coming back to check on it.",
     rating: 5,
   },
   {
-    name: "Lakshmi Reddy",
-    role: "Contract Farmer, Telangana",
-    image: img("photo-1531123897727-8f129e1688ce"),
+    name: "Gopal Mahto",
+    role: "Contract Farmer, Hazaribagh, Jharkhand",
+    image: "/trust/farmer-gopal.jpg",
     quote:
-      "Guaranteed buy-back for my moringa harvest gave me real peace of mind. Krishaan Agro keeps every promise.",
+      "Moringa ki fasal par guaranteed buy-back ne is budhe ko sukoon de diya. Krishaan Agro apna har vaada nibhaata hai.",
     rating: 5,
   },
 ];
 
 /* ------------------------------ PARTNERS ------------------------------ */
 
-export const partners: { name: string; logo?: string; location?: string }[] = [
+export type Partner = {
+  name: string;
+  logo?: string;
+  location?: string;
+  role?: string;
+  url?: string;
+  tier?: "official" | "supportive";
+  fit?: "cover" | "contain";
+};
+
+export const partners: Partner[] = [
   {
     name: "Satbahani Agro Pvt Ltd (SAPL)",
     logo: "/partners/sapl.jpg",
     location: "Aurangabad, Bihar",
+    tier: "official",
+    fit: "cover",
+  },
+  {
+    name: "Pragyaan Labs",
+    logo: "/partners/pragyaan-mark-violet.png",
+    role: "Technology & Innovation Partner",
+    url: "https://www.pragyaanlabs.space/",
+    tier: "supportive",
+    fit: "contain",
   },
 ];

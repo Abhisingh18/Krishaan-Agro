@@ -54,25 +54,15 @@ export default function Navbar() {
         )}
       >
         <div className="container-x flex h-[72px] items-center justify-between">
-          <Link href="/" className="group flex items-center gap-2.5">
-            <span className="relative h-12 w-12 overflow-hidden rounded-full ring-2 ring-brand-100 shadow-soft transition group-hover:ring-brand-300">
-              <Image
-                src="/logo.jpeg"
-                alt="Krishaan Agro"
-                fill
-                sizes="48px"
-                className="object-cover"
-                priority
-              />
-            </span>
-            <span className="flex flex-col leading-none">
-              <span className="font-display text-lg font-bold text-brand-900">
-                Krishaan<span className="text-accent-500">Agro</span>
-              </span>
-              <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-brand-500">
-                Growing Together
-              </span>
-            </span>
+          <Link href="/" aria-label="Krishaan Agro — Home" className="group flex items-center">
+            <Image
+              src="/logo-mark.png"
+              alt="Krishaan Agro"
+              width={578}
+              height={214}
+              priority
+              className="h-11 w-auto transition-transform duration-300 group-hover:scale-105 sm:h-12"
+            />
           </Link>
 
           {/* Desktop nav */}

@@ -24,8 +24,8 @@ export function organizationSchema() {
     name: SITE.name,
     legalName: "Krishaan Agro",
     url: SITE_URL,
-    logo: absoluteUrl("/logo.jpeg"),
-    image: absoluteUrl("/logo.jpeg"),
+    logo: absoluteUrl("/logo-square.png"),
+    image: absoluteUrl("/og-logo.png"),
     email: SITE.email,
     telephone: SITE.phoneTel,
     description:

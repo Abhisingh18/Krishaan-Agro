@@ -94,12 +94,15 @@ export default function Footer() {
 
       <div className="container-x relative grid gap-10 py-16 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Link href="/" className="flex items-center gap-2.5">
-            <span className="relative h-12 w-12 overflow-hidden rounded-full ring-2 ring-white/20">
-              <Image src="/logo.jpeg" alt="Krishaan Agro" fill sizes="48px" className="object-cover" />
-            </span>
-            <span className="font-display text-lg font-bold text-white">
-              Krishaan<span className="text-accent-400">Agro</span>
+          <Link href="/" aria-label="Krishaan Agro — Home" className="inline-flex">
+            <span className="inline-flex rounded-2xl bg-white px-4 py-3 shadow-soft ring-1 ring-white/10">
+              <Image
+                src="/logo-mark.png"
+                alt="Krishaan Agro"
+                width={578}
+                height={214}
+                className="h-11 w-auto"
+              />
             </span>
           </Link>
           <p className="mt-4 text-sm leading-relaxed text-brand-100/80">

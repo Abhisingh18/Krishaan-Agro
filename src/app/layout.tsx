@@ -67,7 +67,7 @@ export const metadata: Metadata = {
       "Smart farming, urban gardening, contract farming & premium agri products.",
     images: [
       {
-        url: "/logo.jpeg",
+        url: "/og-logo.png",
         width: 1200,
         height: 630,
         alt: "Krishaan Agro",
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     title: "Krishaan Agro — Growing India, Together",
     description:
       "Smart farming, urban gardening, contract farming & premium agri products.",
-    images: ["/logo.jpeg"],
+    images: ["/og-logo.png"],
   },
   robots: {
     index: true,
