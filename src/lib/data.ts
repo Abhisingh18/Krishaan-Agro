@@ -1251,6 +1251,35 @@ export const opportunities: Opportunity[] = [
   },
 ];
 
+/* ------------------------------ FAQ ------------------------------ */
+
+export const faqs: { q: string; a: string }[] = [
+  {
+    q: "What services does Krishaan Agro offer?",
+    a: "Krishaan Agro provides smart farming and hydroponics setups, urban and rooftop gardening, contract farming with assured buy-back, soil testing and advisory, agri machinery, cattle feed and premium agri products.",
+  },
+  {
+    q: "Where is Krishaan Agro located and which areas do you serve?",
+    a: "We are based in Aurangabad, Bihar (824101) and serve farmers, gardeners and businesses across India through on-site visits, doorstep delivery and remote advisory.",
+  },
+  {
+    q: "How does contract farming with guaranteed buy-back work?",
+    a: "We provide quality inputs, technical guidance and a written buy-back agreement for crops like moringa, so you grow with confidence knowing your harvest has an assured market and fair price.",
+  },
+  {
+    q: "Can I order agri products online with Cash on Delivery?",
+    a: "Yes. You can shop our products on the website and place orders via WhatsApp with Cash on Delivery (COD), UPI or card payment.",
+  },
+  {
+    q: "Do you help set up terrace or kitchen gardens in cities?",
+    a: "Absolutely. Our urban gardening team designs and installs rooftop, balcony, vertical and kitchen gardens, supplies healthy plants and provides ongoing after-care.",
+  },
+  {
+    q: "How can I get a soil test and farming advice?",
+    a: "Contact us by phone or WhatsApp to schedule a soil test. We analyse your soil and share a tailored advisory to cut input costs and improve crop quality and yield.",
+  },
+];
+
 /* ------------------------------ TESTIMONIALS ------------------------------ */
 
 export const testimonials = [

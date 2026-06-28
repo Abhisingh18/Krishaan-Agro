@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Fraunces } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/components/cart/CartProvider";
@@ -51,11 +51,29 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/",
+    languages: {
+      "en-IN": "/",
+      "x-default": "/",
+    },
   },
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+  },
+  appleWebApp: {
+    capable: true,
+    title: "Krishaan Agro",
+    statusBarStyle: "default",
+  },
+  other: {
+    "geo.region": "IN-BR",
+    "geo.placename": "Aurangabad, Bihar",
+    "geo.position": "24.7521;84.3742",
+    ICBM: "24.7521, 84.3742",
   },
   openGraph: {
     type: "website",
@@ -92,6 +110,11 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#288027",
+  colorScheme: "light",
 };
 
 export default function RootLayout({

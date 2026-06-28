@@ -15,11 +15,18 @@ export function absoluteUrl(path = "/"): string {
   return `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
 }
 
-/** Organization / LocalBusiness — identifies the real business to Google. */
+/** Approx. geo-coordinates of the Aurangabad, Bihar office (for local SEO / Maps). */
+const GEO = { latitude: 24.7521, longitude: 84.3742 };
+
+/**
+ * Organization + LocalBusiness — identifies the real business to Google.
+ * The combined type, geo-coordinates and opening hours strengthen local search
+ * and Google Maps / Knowledge Panel signals.
+ */
 export function organizationSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": ["Organization", "LocalBusiness"],
     "@id": `${SITE_URL}/#organization`,
     name: SITE.name,
     legalName: "Krishaan Agro",
@@ -28,8 +35,22 @@ export function organizationSchema() {
     image: absoluteUrl("/og-logo.png"),
     email: SITE.email,
     telephone: SITE.phoneTel,
+    slogan: "Growing India, Together",
     description:
       "Krishaan Agro empowers farmers with smart farming, urban gardening, contract farming, agri machinery, soil testing and assured market linkage.",
+    priceRange: "₹₹",
+    currenciesAccepted: "INR",
+    paymentAccepted: "Cash, UPI, Card, Cash on Delivery",
+    knowsAbout: [
+      "Smart Farming",
+      "Hydroponics",
+      "Urban Gardening",
+      "Contract Farming",
+      "Soil Testing",
+      "Agri Machinery",
+      "Cattle Feed",
+      "Organic Products",
+    ],
     address: {
       "@type": "PostalAddress",
       streetAddress: "Govind Bhawan, Veer Kunwar Singh Path, New Area, Behind US Residency",
@@ -38,6 +59,27 @@ export function organizationSchema() {
       postalCode: "824101",
       addressCountry: "IN",
     },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: GEO.latitude,
+      longitude: GEO.longitude,
+    },
+    hasMap: `https://www.google.com/maps?q=${GEO.latitude},${GEO.longitude}`,
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ],
+        opens: "09:00",
+        closes: "19:00",
+      },
+    ],
     areaServed: "IN",
     sameAs: ([
       SITE.socials.linkedin,
@@ -52,6 +94,19 @@ export function organizationSchema() {
       areaServed: "IN",
       availableLanguage: ["en", "hi"],
     },
+  };
+}
+
+/** FAQPage schema — drives FAQ rich results in Google search. */
+export function faqSchema(faqs: { q: string; a: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
   };
 }
 

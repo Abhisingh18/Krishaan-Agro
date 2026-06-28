@@ -8,11 +8,16 @@ import UeraMolasses from "@/components/home/UeraMolasses";
 import Opportunities from "@/components/home/Opportunities";
 import Achievements from "@/components/home/Achievements";
 import Testimonials from "@/components/home/Testimonials";
+import Faq from "@/components/home/Faq";
 import CTA from "@/components/home/CTA";
+import JsonLd from "@/components/JsonLd";
+import { faqSchema } from "@/lib/seo";
+import { faqs } from "@/lib/data";
 
 export default function Home() {
   return (
     <>
+      <JsonLd data={faqSchema(faqs)} />
       <Hero />
       <TrustMarquee />
       <Services />
@@ -23,6 +28,7 @@ export default function Home() {
       <Opportunities />
       <Achievements />
       <Testimonials />
+      <Faq />
       <CTA />
     </>
   );
