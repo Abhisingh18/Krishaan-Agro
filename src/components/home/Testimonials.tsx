@@ -5,6 +5,7 @@ import { Quote, Star } from "lucide-react";
 import Image from "next/image";
 import { testimonials } from "@/lib/data";
 import SectionHeading from "../ui/SectionHeading";
+import FeedbackForm from "./FeedbackForm";
 
 export default function Testimonials() {
   return (
@@ -57,6 +58,8 @@ export default function Testimonials() {
             </motion.div>
           ))}
         </div>
+
+        <FeedbackForm />
       </div>
     </section>
   );
