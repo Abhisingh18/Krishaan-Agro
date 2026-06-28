@@ -3,6 +3,7 @@ import { Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import PageHeader from "@/components/ui/PageHeader";
 import Reveal from "@/components/ui/Reveal";
 import ContactForm from "./ContactForm";
+import FeedbackForm from "@/components/home/FeedbackForm";
 import { SITE, whatsappLink } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -115,6 +116,13 @@ export default function ContactPage() {
             <ContactForm />
           </Reveal>
         </div>
+
+        {/* Feedback */}
+        <Reveal delay={0.1}>
+          <div className="mt-4 border-t border-brand-100 pt-4">
+            <FeedbackForm />
+          </div>
+        </Reveal>
       </section>
     </>
   );
