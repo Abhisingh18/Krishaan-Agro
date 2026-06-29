@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^1.1.0",
     "clsx": "2.1.1",
     "embla-carousel-react": "8.5.2",
     "framer-motion": "11.18.0",

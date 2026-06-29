@@ -3,10 +3,16 @@
 import { useState } from "react";
 import { Star, Send, CheckCircle2, Loader2, AlertCircle, MessageSquareHeart } from "lucide-react";
 import { SITE } from "@/lib/utils";
+import type { FeedbackRow } from "@/lib/db";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
-export default function FeedbackForm() {
+export default function FeedbackForm({
+  onSubmitted,
+}: {
+  /** Called with the new feedback so it can render on the page instantly. */
+  onSubmitted?: (feedback: FeedbackRow) => void;
+}) {
   const [status, setStatus] = useState<Status>("idle");
   const [rating, setRating] = useState(5);
   const [hover, setHover] = useState(0);
@@ -15,24 +21,24 @@ export default function FeedbackForm() {
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("sending");
+
+    const row: FeedbackRow = {
+      name: form.name.trim(),
+      role: form.role.trim() || null,
+      message: form.message.trim(),
+      rating,
+    };
+
     try {
-      const res = await fetch(`https://formsubmit.co/ajax/${SITE.email}`, {
+      // Save to PostgreSQL so the feedback renders for every visitor.
+      const res = await fetch("/api/feedback", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          _subject: `⭐ New Feedback (${rating}/5) — ${form.name}`,
-          _template: "table",
-          _captcha: "false",
-          Name: form.name,
-          "Role / Location": form.role || "—",
-          Rating: `${rating} / 5`,
-          Feedback: form.message,
-        }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(row),
       });
       if (!res.ok) throw new Error("send failed");
+
+      onSubmitted?.({ ...row, created_at: new Date().toISOString() });
       setStatus("sent");
     } catch {
       setStatus("error");
